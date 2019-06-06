@@ -13,7 +13,7 @@ github_url: https://github.com/cc-coding
 repository: cc-coding/c-blogs.github.io
 
 encoding: "utf-8"
-header-img: img/codeWallpaper.jpg
+header-img: img/programmer's_life.jpg
 favicon: img/favicon.ico
 
 url: http://www.c-blogs.cn
@@ -25,7 +25,7 @@ enforce_ssl: c-blogs.cn
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
