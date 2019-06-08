@@ -9,8 +9,8 @@ description: "Nothing is ever too late."
 email: 529786580@qq.com
 keyword: "Mr.C, Mr.C的博客, liaojianhao, 廖建豪, python, iPhone"
 
-github_url: https://github.com/cc-coding
-repository: cc-coding/c-blogs.github.io
+github_url: https://github.com/Mr-xiaoweiwei
+repository: Mr-xiaoweiwei/c-blogs.github.io
 
 encoding: "utf-8"
 header-img: img/programmer.jpg
@@ -87,7 +87,7 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+ba_track_id: 5fa39a878ae2bbaee87306af8c62122d
 
 # Google Analytics
 ga_track_id: 'UA-141676689-1'            # Format: UA-xxxxxx-xx
@@ -112,7 +112,12 @@ service-worker: true
 # Friends
 friends: [
     {
+<<<<<<< HEAD
         title: "WY",
         href: "http://zhengwuyang.com"
+=======
+        title: "我还没有朋友,你愿意吗？",
+        href: "http://www.baidu.com"
+>>>>>>> 4d4e9a2f9a698c1faae468ce4be8302ce84b67ef
     }
 ]
