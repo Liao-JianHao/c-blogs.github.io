@@ -1,0 +1,2646 @@
+---
+layout:     post
+title:      Python大纲
+subtitle:   自己整理的一些笔记
+date:       2019-06-08
+author:     Mr.C
+header-img: img/cloud.jpg
+catalog: true
+tags:
+    - Python
+---
+
+
+
+
+[TOC]
+
+
+
+
+
+![大纲](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/NIRqo3e4Zpk5yuJTZxMrUQvn9F8RrPH6qTKav3lqZ1U!/b/dAUBAAAAAAAA&bo=3AU4BAAAAAADB8c!&rf=viewer_4)
+
+# **※ Python基础 ※
+
+#### 一、注释
+
+- 单行注释 
+
+``` python
+# 注释
+```
+
+- 多行注释
+
+``` python
+'''注释'''
+```
+
+#### 二、关键字
+
+``` python
+import keyword
+keyword.kwlist
+```
+
+#### 三、常用格式符号
+
+| 格式符号 | 转换                       |
+| :------: | :------------------------- |
+|    %c    | 字符                       |
+|    %s    | 字符串                     |
+|    %d    | 有符号十进制整数           |
+|    %u    | 无符号十进制整数           |
+|    %o    | 八进制整数                 |
+|    %x    | 十六进制整数（小写字母0x） |
+|    %X    | 十六进制整数（大写字母0X） |
+|    %f    | 浮点数                     |
+|    %e    | 科学计数法（小写'e'）      |
+|    %E    | 科学计数法（大写“E”）      |
+|    %g    | ％f和％e 的简写            |
+|    %G    | ％f和％E的简写             |
+
+#### 四、运算符
+
+###### *1.算数运算符*
+
+| 运算符 | 描述   | 实例                                                         |
+| :----: | :----- | :----------------------------------------------------------- |
+|   +    | 加     | 两个对象相加 a + b 输出结果 30                               |
+|   -    | 减     | 得到负数或是一个数减去另一个数 a - b 输出结果 -10            |
+|   *    | 乘     | 两个数相乘或是返回一个被重复若干次的字符串 a * b 输出结果 200 |
+|   /    | 除     | b / a 输出结果 2                                             |
+|   //   | 取整除 | 返回商的整数部分 9//2 输出结果 4 , 9.0//2.0 输出结果 4.0     |
+|   %    | 取余   | 返回除法的余数 b % a 输出结果 0                              |
+|   **   | 指数   | a**b 为10的20次方， 输出结果 100000000000000000000           |
+
+###### *2.赋值运算符*
+
+| 运算符 | 描述       | 实例                                                         |
+| :----- | :--------- | :----------------------------------------------------------- |
+| -      | 赋值运算符 | 把 = 号右边的结果 赋给 左边的变量，如 num = 1 + 2 * 3，结果num的值为7 |
+
+###### *3.复合赋值运算*
+
+| 运算符 | 描述             | 实例                          |
+| ------ | ---------------- | ----------------------------- |
+|        |                  |                               |
+| +=     | 加法赋值运算符   | c += a 等效于 c = c + a       |
+| -=     | 减法赋值运算符   | c -= a 等效于 c = c - a       |
+| *=     | 乘法赋值运算符   | c *= a 等效于 c = c * a       |
+| /=     | 除法赋值运算符   | c /= a 等效于 c = c / a       |
+| %=     | 取模赋值运算符   | c %= a 等效于 c = c % a       |
+| **=    | 幂赋值运算符     | c \*\*= a 等效于 c = c \*\* a |
+| //=    | 取整除赋值运算符 | c //= a 等效于 c = c // a     |
+
+###### *4.比较运算符*
+
+| 运算符 | 描述                                                         | 实例                           |
+| ------ | ------------------------------------------------------------ | ------------------------------ |
+| ==     | 检查两个操作数的值是否相等，如果是则条件变为真。             | 如a=3,b=3，则（a == b) 为 True |
+| !=     | 检查两个操作数的值是否相等，如果值不相等，则条件变为真。     | 如a=1,b=3，则(a != b) 为 True  |
+| >      | 检查左操作数的值是否大于右操作数的值，如果是，则条件成立。   | 如a=7,b=3，则(a > b) 为 True   |
+| <      | 检查左操作数的值是否小于右操作数的值，如果是，则条件成立。   | 如a=7,b=3，则(a < b) 为 False  |
+| >=     | 检查左操作数的值是否大于或等于右操作数的值，如果是，则条件成立。 | 如a=3,b=3，则(a >= b) 为 True  |
+| <=     | 检查左操作数的值是否小于或等于右操作数的值，如果是，则条件成立。 | 如a=3,b=3，则(a <= b) 为 True  |
+
+###### *5.逻辑运算符*
+
+| 运算符 | 逻辑表达式 |                             描述                             |             实例              |
+| :----- | :--------: | :----------------------------------------------------------: | :---------------------------: |
+| and    |  x and y   | 布尔"与"：如果 x 为 False，x and y 返回 False，否则它返回 y 的值。 | True and False， 返回 False。 |
+| or     |   x or y   |  布尔"或"：如果 x 是 True，它返回 True，否则它返回 y 的值。  |  False or True， 返回 True。  |
+| not    |   not x    | 布尔"非"：如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。 |    not True 返回False 反之    |
+
+###### *6.成员运算符*
+
+| 运算符 | Python表达式       | 结果 | 描述           | 支持数据类型             |
+| ------ | ------------------ | ---- | -------------- | ------------------------ |
+| in     | 3 in (1, 2, 3)     | True | 元素是否存在   | 字符串、列表、元组、字典 |
+| not in | 4 not in (1, 2, 3) | True | 元素是否不存在 | 字符串、列表、元组、字典 |
+
+#### 五、数据类型转换
+
+| 函数                   | 说明                                                |
+| ---------------------- | --------------------------------------------------- |
+| int(x [,base ])        | 将x转换为一个整数                                   |
+| float(x )              | 将x转换为一个浮点数                                 |
+| complex(real [,imag ]) | 创建一个复数，real为实部，imag为虚部                |
+| str(x )                | 将对象 x 转换为字符串                               |
+| repr(x )               | 将对象 x 转换为表达式字符串                         |
+| eval(str )             | 用来计算在字符串中的有效Python表达式,并返回一个对象 |
+| tuple(s )              | 将序列 s 转换为一个元组                             |
+| list(s )               | 将序列 s 转换为一个列表                             |
+| chr(x )                | 将一个整数转换为一个Unicode字符                     |
+| ord(x )                | 将一个字符转换为它的ASCII整数值                     |
+| hex(x )                | 将一个整数转换为一个十六进制字符串                  |
+| oct(x )                | 将一个整数转换为一个八进制字符串                    |
+| bin(x )                | 将一个整数转换为一个二进制字符串                    |
+
+#### 六、小技巧
+
+###### *0.三木运算*
+
+~~~ python
+"你好" if "心情好" == True else "滚"
+~~~
+
+###### *1.f-strings 及 format函数*
+
+~~~ python
+name = '帅哥'
+print(f'我是{name}')
+
+print("{} {}".format("hello", "world"))
+--> 'hello world'
+print("{:.2f}".format(3.1415926))
+--> 3.14
+~~~
+
+###### 2.递归 与 尾递归
+
+~~~ python
+# 递归
+def normal_recursion(n):
+    if n == 1:
+        return 1
+    else:
+        return n + normal_recursion(n-1)
+# 尾递归
+def tail_recursion(n, total=0):
+    if n == 0:
+        return total
+    else:
+        return tail_recursion(n-1, total+n)
+~~~
+
+###### 3.推导式
+
+~~~ python
+<1.列表推导式>
+[expr for value in collection if condition]
+[expr，expr1 for value in collection if condition for value1 in collection if condition]
+<2.字典推导式>
+{ key_expr: value_expr for value in collection if condition }
+<3.集合推导式>
+{ expr for value in collection if condition }
+<4.嵌套推导式>
+pass
+~~~
+
+###### 4.匿名函数 (lambda)
+
+~~~ python
+add = lambda x, y : x + y
+result = add(num, num1)
+print(resutl)	--> 3
+~~~
+
+###### 5.委托
+
+~~~ python
+class aaa:
+    def xxxaaa(self):
+        print("aaa.aaa")
+ 
+    def xxxbbb(self):
+        print("aaa.bbb")
+ 
+class bbb:
+    def __init__(self):
+        self.__aaa = aaa()
+ 
+    def xxxaaa(self):
+        print("bbb.aaa")
+ 
+    def xxxccc(self):
+        print("bbb.ccc")
+ 
+    def __getattr__(self, item):
+        return getattr(self.__aaa, item)
+ 
+class ccc:
+    def __init__(self):
+        self.__bbb = bbb()
+ 
+    def xxxccc(self):
+        print("ccc.ccc")
+ 
+    def __getattr__(self, item):
+        return getattr(self.__bbb, item)
+
+x = ccc()
+x.xxxaaa()
+x.xxxbbb()
+x.xxxccc()
+--------------------- >
+bbb.aaa
+aaa.bbb
+ccc.ccc
+~~~
+
+###### 6.元类
+
+~~~ python
+"""
+由类创建出来的。这个用来创建类的类就叫元类
+"""
+Person = type('Person', (，), {'name': '鬼子', 'say': lambda a: print(a.name)})
+person = Person()
+person.say()
+~~~
+
+###### 7.抽象类
+
+~~~ python
+"""
+抽象类描述了相关的一组类的通用的特征和行为。在客户的应用程序中，抽象类是不能正常实例化的，
+它的子类叫做具体类，这表明它们才是真正用来在客户应用程序中创建对象的类。
+"""
+
+from abc import ABCMeta, abstractmethod
+ 
+class aaa(metaclass=ABCMeta):
+    def __init__(self):
+        self.__x = 1
+        self.__y = 2
+        self.__z = 3
+ 
+    @abstractmethod
+    def asd(self):
+        print(self.__x + self.__y + self.__z)
+ 
+class bbb(aaa):
+    def __init__(self):
+        super().__init__()
+ 
+    def asd(self):
+        print("必须定义，否则报错！")
+ 
+    def dsa(self):
+        print(self._aaa__x - self._aaa__y - self._aaa__z)
+ 
+ 
+x = bbb()
+x.asd()
+x.dsa()
+--------------------- >
+必须定义，否则报错！
+-4
+~~~
+
+###### 8.闭包
+
+~~~ python
+def 外层函数(参数):
+    def 内层函数():
+        print("内层函数执行", 参数)
+
+    return 内层函数
+
+
+内层函数的引用 = 外层函数("传入参数")
+内层函数的引用()
+~~~
+
+###### 9.装饰器
+
+~~~ python
+概念：
+1.装饰器的实现是由闭包支撑的；
+2.装饰器本质上是⼀个python函数，它可以在让其他函数在不需要做任何代码的变动的前提下增加额外的功能；
+3.装饰器的返回值也是⼀个函数的对象，它经常用于有切面需求的场景，实现路由传参，flask的路由传参依赖于装饰器，浏览器通过url访问到装饰器的路由，从而访问视图函数获得返回的HTML页面；
+
+应用场景：
+1.可以在外层函数加上时间计算函数，计算函数运行时间；
+2.计算函数运行次数；
+3.可以用在框架的路由传参上；
+4.插入日志，作为函数的运行日志；
+5.事务处理，可以让函数实现事务的一致性，让函数要么一起运行成功，要么一起运行失败；
+6.缓存，实现缓存处理；
+7.权限的校验，在函数外层套上权限校验的代码，实现权限校验；
+---------------------  例子 ---------------------
+def set_func(func):
+    __singleton = None
+ 
+    def call_func(*args, **kwargs):
+        nonlocal __singleton
+        if not __singleton:
+            __singleton = func(*args, **kwargs)
+            return __singleton
+        else:
+            return __singleton
+    return call_func
+ 
+ 
+@set_func
+class Std(object):
+ 
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+ 
+ 
+s2 = Std('jack',18)
+print(id(s2),s2.name,s2.age)
+ 
+s1 = Std('leo',23)
+print(id(s1),s1.name,s1.age)
+--------------------- >
+
+139727292442832 jack 18
+139727292442832 jack 18
+~~~
+
+###### 10.生成器
+
+~~~ python
+应用场景：
+1.使用生成器最好的场景就是当你需要以迭代的方式去穿越一个巨大的数据集合。比如：一个巨大的文件/一个复杂的数据库查询等。
+
+~~~
+
+###### 11.迭代器
+
+~~~ python
+x = "abcd"
+ 
+def xxx():
+    for i in x:
+        yield i
+ 
+[print(i, end=" ") for i in xxx()]	--> a b c d
+~~~
+
+###### 12.高阶函数
+
+~~~ python
+x = [1, 2, 3, 4, 5, 6, 7]
+
+<1.map()>	map：映射函数
+def aaa(a):
+    return a * a
+print(list(map(aaa, x)))            # 每次执行aaa(x[i])，生成迭代返回。
+--------------------- --------------------- --------------------- 
+<2.reduce()>	reduce：累加函数
+import functools
+def bbb(b_1, b_2):
+    return b_1 + b_2
+print(functools.reduce(bbb, x))     # 执行bbb(bbb(bbb(x[0], x[1]), x[2]), x[3])……，直到x[-1]，返回结果。
+--------------------- --------------------- --------------------- 
+
+def ccc(c):		filter: 筛选函数
+    return c % 2 == 1
+print(list(filter(ccc, x)))         # 判断是否为True，如果为True，生成迭代返回。
+~~~
+
+###### 13.Property属性
+
+~~~ python
+<1.property()函数>
+property(fget=None, fset=None, fdel=None, doc=None) -> property attribute
+--------------------- 例子 --------------------- 
+class Student:
+    def __init__(self):
+        self._age = None
+
+    def get_age(self):
+        print('获取属性时执行的代码')
+        return self._age
+
+    def set_age(self, age):
+        print('设置属性时执行的代码')
+        self._age = age
+
+    def del_age(self):
+        print('删除属性时执行的代码')
+        del self._age
+
+    age = property(get_age, set_age, del_age, '学生年龄')
+
+    
+@property 语法糖提供了比 property() 函数更简洁直观的写法。
+# 被 @property 装饰的方法是获取属性值的方法，被装饰方法的名字会被用做 属性名。
+# 被 @属性名.setter 装饰的方法是设置属性值的方法。
+# 被 @属性名.deleter 装饰的方法是删除属性值的方法。
+--------------------- 例子 --------------------- 
+class Student:
+    def __init__(self):
+        self._age = None
+
+    @property
+    def age(self):
+        print('获取属性时执行的代码')
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        print('设置属性时执行的代码')
+        self._age = age
+
+    @age.deleter
+    def age(self):
+        print('删除属性时执行的代码')
+        del self._age
+~~~
+
+#### 七、常见类型的操作
+
+- 可变类型有： 列表、字典、集合
+- 不可变类型有： 数字、字符串、元组
+
+###### 1. 字符串
+
+~~~ python
+str(object='')			# str() 函数将对象转化为适于人阅读的形式。
+str.isspace()			# isspace() 方法检测字符串是否只由空格组成。
+str.isdigit()			# isdigit() 方法检测字符串是否只由数字组成。
+str.isalpha()			# isalpha() 方法检测字符串是否只由字母组成。
+str.isalnum()			# isalnum() 方法检测字符串是否由字母和数字组成。
+str.isupper()			# isupper() 方法检测字符串中所有的字母是否都为大写。
+str.islower()			# islower() 方法检测字符串是否由小写字母组成。
+str.isdecimal()			# isdecimal() 方法检查字符串是否只包含十进制字符。这种方法只存在于unicode对象。
+str.istitle()			# istitle() 方法检测字符串中所有的单词拼写首字母是否为大写，且其他字母为小写。
+str.isnumeric()			# isnumeric() 方法检测字符串是否只由数字组成。这种方法是只针对unicode对象。
+
+str.upper()				# upper() 方法将字符串中的小写字母转为大写字母。
+str.lower()				# Python lower() 方法转换字符串中所有大写字符为小写。
+
+str.find(str, beg=0, end=len(string))	# find() 方法检测字符串中是否包含子字符串 str
+str.rfind(str, beg=0 end=len(string))	# rfind() 返回字符串最后一次出现的位置，如果没有匹配项则返回-1。
+
+str.rindex(str, beg=0 end=len(string))	# rindex() 返回子字符串 str 在字符串中最后出现的位置。没有则报错
+
+str.strip([chars])		# strip() 方法用于移除字符串头尾指定的字符（默认为空格）或字符序列。
+str.rstrip([chars])		# rstrip() 删除 string 字符串末尾的指定字符（默认为空格）.
+str.lstrip([chars])str.lstrip([chars])	# lstrip() 方法用于截掉字符串左边的空格或指定字符。
+
+str.startswith(substr, beg=0,end=len(string));	# startswith() 用于用于检查字符串是否是以指定子字符串开头
+str.endswith(suffix[, start[, end]])	# endswith() 用于判断字符串是否以指定后缀结尾。
+
+str.encode(encoding='UTF-8',errors='strict')	# 编码格式编码字符串。errors参数可以指定不同的错误处理方案。
+bytes.decode(encoding="utf-8", errors="strict")	# 编码格式解码 bytes 对象。默认编码为 'utf-8'。
+
+str.ljust(width[, fillchar])	# ljust() 方法返回一个原字符串左对齐,并使用空格填充至指定长度的新字符串。
+str.rjust(width[, fillchar])	# rjust() 返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串。
+
+str.replace(old, new[, max])	#把字符串中的 （旧字符串） 替换成 (新字符串)，第三个参数，则替换不超过 max 次。
+str.capitalize()		# Python capitalize()将字符串的第一个字母变成大写,其他字母变小写。
+str.zfill(width)		# zfill() 方法返回指定长度的字符串，原字符串右对齐，前面填充0。
+str.title()				# title() 方法返回"标题化"的字符串,就是说所有单词的首个字母转化为大写，其余字母均为小写。
+str.swapcase()			# swapcase() 方法用于对字符串的大小写字母进行转换。
+str.center(width[, fillchar])	# 返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。
+str.count(sub, start= 0,end=len(string))	# 统计字符串里某个字符出现的次数。可选参数为在字符串搜索的起始位置。
+str.expandtabs(tabsize=8)	# 把字符串中的 tab 符号('\t')转为空格，tab 符号('\t')默认的空格数是 8。
+
+~~~
+
+###### 2.列表
+
+~~~ python
+list( seq )				# list() 方法用于将元组或字符串转换为列表。
+list.append(obj)		# append() 方法用于在列表末尾添加新的对象。
+list.extend(seq)		# extend() 函数用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。
+list.insert(index, obj)	# insert() 函数用于将指定对象插入列表的指定位置。
+list.index(obj)			# index() 函数用于从列表中找出某个值第一个匹配项的索引位置。
+list.pop([index=-1])	# pop() 函数用于移除列表中的一个元素（默认最后一个元素），并且返回该元素的值。
+list.remove(obj)		# remove() 函数用于移除列表中某个值的第一个匹配项。
+list.reverse()			# reverse() 函数用于反向列表中元素。
+list.count(obj)			# count() 方法用于统计某个元素在列表中出现的次数。
+list.sort(cmp=None, key=None, reverse=False)	# sort() 函数用于对原列表进行排序，如果指定参数，则使用比较函数指定的比较函数。
+list.copy()				# copy() 函数用于复制列表，类似于 a[:]。
+~~~
+
+###### 3.元祖
+
+~~~python
+tuple( seq )			# Python 元组 tuple() 函数将列表转换为元组。
+tuple.count()			# 计算元素的数量
+tuple.index()			# 查看元素的位置，没有就报错 ValueError
+~~~
+
+###### 4.字典
+
+~~~ python
+dict(**kwarg) --> dict(a='a', b='b', t='t')
+dict(mapping, **kwarg)	--> dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+dict(iterable, **kwarg)	--> dict([('one', 1), ('two', 2), ('three', 3)])
+dict.update(dict2)		# Python 字典(Dictionary) update() 函数把字典dict2的键/值对更新到dict里。
+dict.clear()			# Python 字典(Dictionary) clear() 函数用于删除字典内所有元素。
+dict.values()			# Python 字典(Dictionary) values() 函数以列表返回字典中的所有值。
+dict.keys()				# Python 字典(Dictionary) keys() 函数以列表返回一个字典所有的键。
+dict.items()			# Python 字典 items() 方法以列表返回可遍历的(键, 值) 元组数组。
+dict.copy()				# Python 字典 copy() 函数返回一个字典的浅复制。
+dict.get(key, default=None)	# Python 字典 get() 函数返回指定键的值，如果值不在字典中返回默认值。
+dict.setdefault(key, default=None) # Python 字典 setdefault() 方法和 get()方法 类似, 如果键不已经存在于字典中，将会添加键并将值设为默认值。
+dict.fromkeys(seq[, value]) # Python 字典 fromkeys() 函数用于创建一个新字典，以序列 seq 中元素做字典的键，value 为字典所有键对应的初始值。
+~~~
+
+
+
+# ※ 内置函数、模块、魔法方法 ※
+
+#### 一、函数
+
+[python3 内置函数]:<https://www.runoob.com/python3/python3-built-in-functions.html>
+
+``` python
+input([prompt])  # 输入
+
+print(*objects, sep=' ', end='\n', file=sys.stdout)  # 输出
+
+enumerate(sequence, [start=0])  # 将一个可遍历的数据对象(可迭代)组合为一个索引序列，同时列出数据和数据下标。
+
+abs( x )	# abs() 函数返回数字的绝对值。
+
+max( x, y, z, .... )	# max() 方法返回给定参数的最大值，参数可以为序列。
+
+min( x, y, z, .... )	# min() 方法返回给定参数的最小值，参数可以为序列。
+
+round( x [, n]  )	# round() 方法返回浮点数x的四舍五入值。
+
+getattr(object, name[, default])	# getattr() 函数用于返回一个对象属性值。
+
+setattr(object, name, value)	# setattr() 函数对应函数 getattr()，用于设置属性值，该属性不一定是存在的。
+
+delattr(object, name)	# delattr 函数用于删除属性。
+
+hasattr(object, name)	# hasattr() 函数用于判断对象是否包含对应的属性。
+
+all(iterable)	# 判断给定的可迭代参数 iterable 中的所有元素是否都为 TRUE，如果是返回 True，否则返回 False。
+
+iter(object[, sentinel])	# iter() 函数用来生成迭代器。
+
+next(iterator[, default])	# next() 返回迭代器的下一个项目。
+
+id([object])	# id() 函数用于获取对象的内存地址。
+
+sorted(iterable, key=None, reverse=False)	# sorted() 函数对所有可迭代的对象进行排序操作。
+
+classmethod	@classmethod	# classmethod 修饰符对应的函数不需要实例化，不需要 self 参数。
+
+staticmethod(function) @staticmethod	# python staticmethod 返回函数的静态方法。
+
+eval(expression[, globals[, locals]])	# eval() 函数用来执行一个字符串表达式，并返回表达式的值。
+
+open(file, mode='r')	# Python open() 方法用于打开一个文件，并返回文件对象,无法打开报错 OSError
+
+exec(object[, globals[, locals]])	# 执行储存在字符串或文件中的语句，相比于eval，exec可以执行更复杂的代码。
+
+isinstance(object, classinfo)	# isinstance() 函数来判断一个对象是否是一个已知的类型，类似 type()。
+
+sum(iterable[, start])	# sum() 方法对系列进行求和计算。
+
+zip([iterable, ...])	# 将对象中对应的元素打包成一个个元组。
+
+filter(function, iterable)	# filter() 函数用于过滤序列，过滤掉不符合条件的元素，返回一个迭代器对象。
+
+super(type[, object-or-type])	# super() 函数是用于调用父类(超类)的一个方法。
+
+format()	# 它增强了字符串格式化的功能。
+
+len( s )	# Python len() 方法返回对象（字符、列表、元组等）长度或项目个数。
+
+class property([fget[, fset[, fdel[, doc]]]])	# property() 函数的作用是在新式类中返回属性值。
+
+range(start, stop[, step])	# 返回的是一个可迭代对象（类型是对象），而不是列表类型， 所以打印的时候不会打印列表。
+
+
+"""
+数据类型方法
+"""
+bin(x)	# bin() 返回一个整数 int 或者长整数 long int 的二进制表示。
+
+list( seq )	# list() 方法用于将元组或字符串转换为列表。
+
+tuple( seq )	# tuple 函数将列表转换为元组。
+
+class bytes([source[, encoding[, errors]]])	# bytes 函数返回一个新的 bytes 对象。
+
+class bool([x])	# bool() 函数用于将给定参数转换为布尔类型，如果没有参数，返回 False。
+
+class set([iterable])	# set() 函数创建一个无序不重复元素集。
+
+class float([x])	# float() 函数用于将整数和字符串转换成浮点数。
+
+class str(object='')	# str() 函数将对象转化为适于人阅读的形式。
+
+class dict(iterable, **kwarg)	# dict() 函数用于创建一个字典。
+
+class int(x, base=10)	# int() 函数用于将一个字符串或数字转换为整型。
+```
+
+#### 二、模块
+
+##### **标准模块**
+
+###### 1.随机模块（random）
+
+[random模块]:<https://docs.python.org/zh-cn/3.6/library/random.html?highlight=random#module-random>
+
+~~~ python
+import random
+
+print ("random() : ", random.random()) 	# 生成第一个随机数
+print(random.uniform(1.1,5.4))     		# 产生  1.1 到 5.4 之间的随机浮点数，区间
+print(random.choice('tomorrow'))   		# 从序列中随机选取一个元素
+print(random.randrange(1,100,2))   		# 生成从1到100的间隔为2的随机整数
+a=[1,3,5,6,7]   random.shuffle(a)    	# 将序列a中的元素顺序打乱
+
+~~~
+
+###### 2.系统模块（sys、os、shutil）
+
+~~~ python
+"""
+os模块：提供对操作系统进行调用的接口
+shutil模块：高级的文件、文件夹、压缩包处理模块
+sys模块：提供访问解释器使用或维护的变量，和与解释器进行交互的函数。
+"""
+~~~
+
+[os模块]:<https://docs.python.org/zh-cn/3.6/library/os.html?highlight=os#module-os>
+[sys模块]:https://docs.python.org/zh-cn/3.6/library/sys.html?highlight=sys#module-sys
+[shutil]:<https://docs.python.org/zh-cn/3.6/library/shutil.html?highlight=shutil#module-shutil>
+
+~~~ python
+import sys
+sys.setrecursionlimit(10000)		# 重新设置默认递归深度
+~~~
+
+###### 3.容器数据类型模块(collections)
+
+[collections模块]:<https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#module-collections>
+
+| 容器                                                         | 介绍                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [`namedtuple()`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.namedtuple) | **（具名元组）**创建命名元组子类的工厂函数                   |
+| [`deque`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.deque) | **（双向队列）**类似列表(list)的容器，实现了在两端快速添加(append)和弹出(pop) |
+| [`ChainMap`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.ChainMap) | **（默认字典）**类似字典(dict)的容器类，将多个映射集合到一个视图里面 |
+| [`Counter`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.Counter) | **（计数器）**字典的子类，提供了可哈希对象的计数功能         |
+| [`OrderedDict`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.OrderedDict) | **（有序字典）**字典的子类，保存了他们被添加的顺序           |
+| [`defaultdict`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.defaultdict) | **（默认字典）**字典的子类，提供了一个工厂函数，为字典查询提供一个默认值 |
+| [`UserDict`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.UserDict) | 封装了字典对象，简化了字典子类化                             |
+| [`UserList`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.UserList) | 封装了列表对象，简化了列表子类化                             |
+| [`UserString`](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=collections#collections.UserString) | 封装了列表对象，简化了字符串子类化                           |
+
+###### 4.日期和日历、运行时间（time、datetime、calendar、timeit)
+
+[time模块]:<https://docs.python.org/3/library/time.html?highlight=time#module-time>
+[datetime模块]:<https://docs.python.org/3/library/datetime.html?highlight=time#module-datetime>
+[timeit模块]:<https://docs.python.org/3/library/timeit.html?highlight=time#module-timeit>
+[calendar模块]:<https://docs.python.org/3/library/calendar.html?highlight=calendar#module-calendar>
+
+~~~ python
+"""
+datetime与time
+区别：
+time是归类在Generic Operating System Services中，换句话说， 它提供的功能是更加接近于操作系统层面的。通读文档可知，time 模块是围绕着 Unix Timestamp 进行的。 日期范围被限定在 1970 - 2038 之间
+datetime 比 time 高级了不少，可以理解为 datetime 基于 time 进行了封装，提供了更多实用的函数。
+"""
+
+datetime.year			# 年
+datetime.month			# 月
+datetime.day			# 日
+datetime.hour			# 时
+datetime.minute			# 分
+datetime.second			# 秒
+datetime.microsecond	# 微秒
+datetime.tzinfo
+datetime.today()a		# 当前时间，localtime
+datetime.now([tz])		# 当前时间默认 localtime
+datetime.utcnow()		# UTC 时间
+datetime.fromtimestamp(timestamp[, tz]) 	# 由 Unix Timestamp 构建对象
+datetime.strptime(date_string, format)  	# 给定时间格式解析字符串
+--------------------- 
+
+~~~
+
+
+
+- 日期格式化符号
+
+|                        格 | 式                              |
+| ------------------------: | :------------------------------ |
+|   %d 月内中的一天（0-31） | %Y 四位数的年份表示（000-9999） |
+|          %m 月份（01-12） | %d 月内中的一天（0-31）         |
+| %H 24小时制小时数（0-23） | %I 12小时制小时数（01-12）      |
+|        %M 分钟数（00=59） | %S 秒（00-59）                  |
+
+~~~ python
+"""
+<timeit>准确测量小段代码的执行时间
+"""
+timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000)
+---------------------------- 例子 ----------------------------
+import timeit
+timeit.timeit('"-".join(str(n) for n in range(100))', number=10000)
+~~~
+
+###### 5.序列化器
+
+- 介绍
+
+通过将对象序列化可以将其存储在变量或者文件中，可以保存当时对象的状态，实现其生命周期的延长。并且需要时可以再次将这个对象读取出来。
+
+[json模块]:<https://docs.python.org/zh-cn/3.6/library/json.html?highlight=json#module-json>
+
+| Python                                 | Json   |
+| :------------------------------------- | :----- |
+| dict                                   | object |
+| list, tuple                            | array  |
+| str                                    | string |
+| int, float, int- & float-derived Enums | number |
+| True                                   | true   |
+| False                                  | false  |
+| None                                   | null   |
+
+~~~ python
+"""
+JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式。
+"""
+json.dumps()	# 对数据进行编码。
+json.loads()	# 对数据进行解码。
+
+~~~
+
+[pickle模块]:<https://docs.python.org/zh-cn/3.6/library/pickle.html?highlight=pickle#module-pickle>
+
+~~~ python
+"""
+Pickle 对一个 Python 对象结构的二进制序列化和反序列化。 
+"""
+import pickle
+str = 'hello'
+
+str = pickle.dumps(str)
+print(str)--> b'\x80\x03X\x05\x00\x00\x00helloq\x00.'
+str = pickle.loads(str)
+print(str)-- 'hello'
+
+~~~
+
+[base64模块]:<https://docs.python.org/zh-cn/3.6/library/base64.html?highlight=base64#module-base64>
+
+
+
+~~~ python
+"""
+Base64 将二进制数据编码为可打印的 ASCII 字符以及将这些编码解码回二进制数据的函数。
+因为3.x中字符都为unicode编码，而b64encode函数的参数为byte类型，所以必须先转码。
+"""
+import base64
+str = 'hello'
+
+str = base64.encode(str.encode())
+print(str)--> b'aGVsbG8='
+str = base64.decode(str)
+print(str)--> b'hello'
+~~~
+
+---------------------------
+
+##### **第三方包**
+
+**1.序列化器**
+
+[itsdangerous模块]:<https://pypi.org/project/itsdangerous/>
+
+~~~python
+"""
+(Django中的使用，敏感信息进行加密)
+"""
+
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer, BadData
+from django.conf import settings
+
+
+class DataSerializer(object):
+    @staticmethod
+    def generate_data_signature(openid):
+        """生成数据签名(加密)"""
+        # Parame:secret_key, expires_in = None
+        serializer = Serializer(settings.SECRET_KEY, expires_in=300)
+        data = {'openid': openid}  # 把数据包装成字典
+        openid_sign = serializer.dumps(data)  # 加密后返回的数据是bytes类型
+        return openid_sign.decode()
+
+    @staticmethod
+    def check_data_signature(openid_sign):
+        """签证数据签名"""
+        serializer = Serializer(settings.SECRET_KEY, expires_in=300)
+        try:
+            data = serializer.loads(openid_sign)
+        except BadData:
+            return None
+        else:
+            return data.get('openid')
+~~~
+
+
+
+
+
+#### 三、魔法方法
+
+~~~ python
+<__new__>
+
+<__init__>
+
+<__delete__>
+
+<__all__>	# all 被用来在模块级别暴露接口
+import os
+import sys
+__all__ = ["process_xxx"]  # 排除了 `os` 和 `sys`
+def process_xxx():
+    pass  # omit
+~~~
+
+
+
+# ※ Python高级 ※
+
+#### 一、GIL锁和互斥锁
+
+
+
+#### 二、 [进程、线程、协程] 
+
+[进程、线程、协程]:https://blog.csdn.net/weixin_31678985/article/details/79734947
+
+​	<进程>
+
+[multiprocessing模块]:<https://docs.python.org/zh-cn/3.6/library/multiprocessing.html?highlight=multiprocessing#module-multiprocessing>
+
+- **它是操作系统进行资源分配的基本单位**
+
+
+
+~~~ python
+frome multiprocessing import Queue,Process,Pool
+"""
+Queue:队列
+Process：进程
+Pool：进程池
+"""
+~~~
+
+
+
+---
+
+​	<线程>
+
+
+
+---
+
+​	<协程>
+
+
+
+#### **三、Tcp 与 Udp**
+
+![OSI七层网络与TCP/IP五层网络的区别与联系](https://images2015.cnblogs.com/blog/907596/201609/907596-20160926174520969-717448789.png)
+
+TCP/IP（传输控制协议/网间网协议)是目前世界上应用最为广泛的协议，它的流行与Internet的迅猛发展密切相关。
+TCP/IP最初是为互联网的原型ARPANET所设计的，目的是提供一整套方便实用、能应用于多种网络上的协议，事实证明TCP/IP做到了这一点，它使网络互联变得容易起来，并且使越来越多的网络加入其中，成为Internet的事实标准。
+
+TCP/IP协议族包含了很多功能各异的子协议。为此我们也利用上文所述的分层的方式来剖析它的结构。
+
+**TCP/IP层次模型共分为四层：应用层->传输层->网络层->数据链路层。**
+
+**三次握手**
+
+1）第一次握手：Client将标志位SYN置为1，随机产生一个值seq=J，并将该数据包发送给Server，Client进入SYN_SENT状态，等待Server确认。
+2）第二次握手：Server收到数据包后由标志位SYN=1知道Client请求建立连接，Server将标志位SYN和ACK都置为1，ack=J+1，随机产生一个值seq=K，并将该数据包发送给Client以确认连接请求，Server进入SYN_RCVD状态。
+3）第三次握手：Client收到确认后，检查ack是否为J+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=K+1，并将该数据包发送给Server，Server检查ack是否为K+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成**三次握手**，随后Client与Server之间可以开始传输数据了。
+
+**四次挥手**
+
+1）第一次挥手：Client发送一个FIN，用来关闭Client到Server的数据传送，Client进入FIN_WAIT_1状态。
+2）第二次挥手：Server收到FIN后，发送一个ACK给Client，确认序号为收到序号+1（与SYN相同，一个FIN占用一个序号），Server进入CLOSE_WAIT状态。
+3）第三次挥手：Server发送一个FIN，用来关闭Server到Client的数据传送，Server进入LAST_ACK状态。
+4）第**四次挥手**：Client收到FIN后，Client进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+1，Server进入CLOSED状态，完成四次挥手。
+
+
+
+#### 四、正则
+
+# ※ Linux ※
+
+#### 一、命令
+
+[linux命令]:<https://www.runoob.com/linux/linux-command-manual.html>
+
+~~~python
+1.sudo apt install aptitude  # 可以使包降级 比如：sudo aptitude install xx
+2.dpkg -l *xxx*  # 查看相关包
+3.sudo pkill Xorg  # 快速重启
+4.dpkg --get-selections|grep *xxx*  # 查看相关软件
+5.curl [option] [url]  # 在Linux中curl是一个利用URL规则在命令行下工作的文件传输工具
+~~~
+
+
+
+
+
+# ※ 数据库 ※
+
+#### 一、关系型数据库
+
+###### 1.Mysql
+
+![mysql](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/u*eaFInTxkFGmhaluS79J*0cvwlJI44iHufqr7x7S98!/b/dL8AAAAAAAAA&bo=oAU4BAAAAAADB7s!&rf=viewer_4)
+
+- **事务的特性**
+  - 原子性(Atomicity)：事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执
+    行。
+  - 一致性(Consistency)：几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相
+    一致。
+  - 隔离性(Isolation)：事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透
+    明的。
+  - 持久性(Durability)：对于任意已提交事务，系统必须保证该事务对数据库的改变不被丢失，即
+    使数据库出现故障
+
+![myqsl引擎](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/uITTZTTl4BUD7djm5op6ojvzXMCM8lUP4p5dOPwGGns!/b/dFMBAAAAAAAA&bo=nwPgAQAAAAADB18!&rf=viewer_4)
+
+- **mysql的引擎**
+
+  
+
+  - **InnoDB** ：如果要提供提交、回滚、崩溃恢复能力的事务安全（ACID兼容）能力，并要求实现并发控制，InnoDB是一个好的选择
+  - **Memory**：如果只是临时存放数据，数据量不大，并且不需要较高的数据安全性，可以选择将数据保存在内存中的Memory引擎，MySQL中使用该引擎作为临时表，存放查询的中间结果。数据的处理速度很快但是安全性不高。
+  - **Archive**：如果只有INSERT和SELECT操作，可以选择Archive，Archive支持高并发的插入操作，但是本身不是事务安全的。Archive非常适合存储归档数据，如记录日志信息可以使用Archive
+  - **MyISAM**：如果数据表主要用来插入和查询记录，则MyISAM（但是不支持事务）引擎能提供较高的处理效率
+
+  ![show engines](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/GVzagVeyZJshXU00bnKgu1SSr0Q4IT07JNW9FZY3UVc!/b/dLgAAAAAAAAA&bo=sAsMAQAAAAADB5Q!&rf=viewer_4)
+
+  ~~~python
+  · MyISAM：默认的MySQL插件式存储引擎，它是在Web、数据仓储和其他应用环境下最常使用的存储引擎之一。注意，通过更改STORAGE_ENGINE配置变量，能够方便地更改MySQL服务器的默认存储引擎。
+  
+  · InnoDB：用于事务处理应用程序，具有众多特性，包括ACID事务支持。(提供行级锁)
+  
+  · BDB：可替代InnoDB的事务引擎，支持COMMIT、ROLLBACK和其他事务特性。
+  
+  · Memory：将所有数据保存在RAM中，在需要快速查找引用和其他类似数据的环境下，可提供极快的访问。
+  
+  · Merge：允许MySQL DBA或开发人员将一系列等同的MyISAM表以逻辑方式组合在一起，并作为1个对象引用它们。对于诸如数据仓储等VLDB环境十分适合。
+  
+  · Archive：为大量很少引用的历史、归档、或安全审计信息的存储和检索提供了完美的解决方案。
+  
+  · Federated：能够将多个分离的MySQL服务器链接起来，从多个物理服务器创建一个逻辑数据库。十分适合于分布式环境或数据集市环境。
+  
+  · Cluster/NDB：MySQL的簇式数据库引擎，尤其适合于具有高性能查找要求的应用程序，这类查找需求还要求具有最高的正常工作时间和可用性。
+  
+  · Other：其他存储引擎包括CSV（引用由逗号隔开的用作数据库表的文件），Blackhole（用于临时禁止对数据库的应用程序输入），以及Example引擎（可为快速创建定制的插件式存储引擎提供帮助）。
+  ~~~
+
+  
+
+- 注入和防注入
+
+###### 2.maria
+
+主从配置：
+
+- **主从步骤**
+
+  ~~~python
+  1.从机配置(修改port,general_log,serer-id)
+  2.sudo docker run --name mariadb-slave -e MYSQL_ROOT_PASSWORD=liao -d --network=host -v /home/co/mariadb_slave/data:/var/lib/mysql -v /home/co/mariadb_slave/mariadb.conf.d:/etc/mysql/mariadb.conf.d mariadb
+  3.mysql -uroot -pliao -h 127.0.0.1 --port=8306
+  4.主机配置(开启log_bin)并重启 —— sudo service mysql restart
+  ~~~
+
+- **同步配置**
+
+  ~~~python
+  1.导出主机全部数据 —— mysqldump -uroot -pmysql --all-databases --lock-all-tables > ~/master_db.sql
+  2.全部数据导入至从机 —— mysql -uroot -pliao -h127.0.0.1 --port=8306 < ~/master_db.sql
+  3.主机创建用户 —— GRANT REPLICATION SLAVE ON *.* TO 'slave'@'%' identified by 'slave'; —— FLUSH PRIVILEGES;
+  4.查看二进制文件 —— SHOW MASTER STATUS;
+  5.从机进行同步 —— change master to master_host='127.0.0.1', master_user='slave', master_password='slave',master_log_file='mysql-bin.000002 ', master_log_pos=770; 并开启从机服务 —— start slave;
+  6.查看状态 —— show slave status \G  成功为两个yes
+  
+  ps：从机登录前开启docker mysql -uroot -pliao -h 127.0.0.1 --port=8306
+  
+  ~~~
+
+
+
+
+
+
+
+
+
+#### 二、非关系型数据库
+
+###### 1.Redis
+
+#### 三、Elasticsearch(全文搜索引擎)
+
+[elasticsearch社区]:<https://elasticsearch.cn/>
+[haystack+elasticsearch]:<http://www.cnblogs.com/longguoliang/p/9320540.html>	"Django"
+
+Elasticsearch 是一个分布式可扩展的实时搜索和分析引擎,一个建立在全文搜索引擎 Apache Lucene(TM) 基础上的搜索引擎.当然 Elasticsearch 并不仅仅是 Lucene 那么简单，它不仅包括了全文搜索功能，还可以进行以下工作:
+
+- 分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。
+- 可实现亿级数据实时查询
+- 实时分析的分布式搜索引擎。
+- 可以扩展到上百台服务器，处理PB级别的结构化或非结构化数据。
+
+Elasticsearch本质上是一个分布式数据库， 允许多台服务器协同工作，每台服务器可以运行多个elasticsearch
+
+单个实例称为节点(node)，一组节点构成为集群(cluster)
+
+Document(文档)是Elasticsearch中最小的数据单元，可以是一条商品数据，一条订单数据等，通常用JSON表示：
+
+```python
+{
+  "product_id": "1",
+  "product_name": "高露洁牙膏",
+  "product_desc": "高效美白",
+  "category_id": "2",
+  "category_name": "日化用品"
+}
+```
+
+**Elasticsearch  核心概念 vs 数据库核心概念**
+
+| Elasticsearch | 数据库 |
+| :------------ | :----- |
+| Index         | 库     |
+| Type          | 表     |
+| Document      | 行     |
+
+~~~python
+from elasticsearch import Elasticsearch
+ 
+""
+create：创建
+update：更新
+delete：删除
+search：查询
+""  
+
+es = Elasticsearch()
+es.indices.create(index='news', ignore=400)
+ 
+data = {'title': '美国留给伊拉克的是个烂摊子吗', 'url': 'http://view.news.qq.com/zt2011/usa_iraq/index.htm'}
+result = es.create(index='news', doc_type='politics', id=1, body=data)
+print(result)
+~~~
+
+
+
+
+
+# ※ Python Web ※
+
+![web](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/of6KBTqZrKu9ciG53ZARcWlbxPO3aY80cb*9kga8XJs!/b/dL8AAAAAAAAA&bo=EAgNAwAAAAADBzQ!&rf=viewer_4)
+
+~~~python
+"""
+WEB服务器的作用：
+1.解析请求报文，调用框架程序处理请求。
+2.组织响应报文，返回内容给客户端。
+
+WEB框架核心功能：
+1.路由分发（根据url找到对应的处理函数）
+2.调用处理函数进行业务的处理
+"""
+~~~
+
+
+
+
+
+#### **Django**
+
+![MVT](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/jupL8bd.rYKIf.rJkvzUgutU1qGeTqK4jrrbex0*wTE!/b/dLYAAAAAAAAA&bo=dAc4BAAAAAADB20!&rf=viewer_4)
+
+##### djanog
+
+- **pagintor分页器**
+
+[分页器]:<https://blog.csdn.net/xinyan233/article/details/80236557>
+
+~~~python
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+"""
+Paginator：分页器对象
+PageNotAnInteger：页码不是一个整数时引发该异常
+EmptyPage：页码不在有效范围时（即数据为空）引发该异常
+"""
+
+"""DRF框架的分页器"""
+from collections import OrderedDict
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+
+from collections import OrderedDict
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+
+class StandardResultPagination(PageNumberPagination):
+    page_size = 1
+    page_size_query_param = 'pagesize'  # 解析分页参数
+    max_page_size = 10
+
+    def get_paginated_response(self, data):
+        """{
+            "counts": "用户总量",
+            "lists": [
+                {
+                    "id": "用户id",
+                    "username": "用户名",
+                    "mobile": "手机号",
+                    "email": "邮箱"
+                },
+                ...
+            ],
+            "page": "页码",
+            "pages": "总页数",
+            "pagesize": "页容量"
+        }
+        """
+        return Response(OrderedDict([
+            ('count', self.page.paginator.count),
+            ('lists', data),  # 数据在data里
+            ('page', self.page.number),
+            ('pages', self.page.paginator.num_pages),
+            ('pagesize', self.get_page_size(self.request))
+        ]))
+        
+# StandardResultPagination必须
+'DEFAULT_PAGINATION_CLASS': 'meiduo_admin.utils.pagination.StandardResultPagination'
+~~~
+
+
+
+
+
+
+
+##### **MVT**
+
+- M全拼为Model，与MVC中的M功能相同，负责和数据库交互，进行数据处理。
+- V全拼为View，与MVC中的C功能相同，接收请求，进行业务处理，返回应答。
+- T全拼为Template，与MVC中的V功能相同，负责封装构造要返回的html。
+
+##### **ORM**
+
+ORM 是 python编程语言后端web框架 Django的核心思想，“Object Relational Mapping”，即对象-关系映射，简称ORM。
+
+一个句话理解就是：创建一个实例对象，用创建它的类名当做数据表名，用创建它的类属性对应数据表的字段，当对这个实例对象操作时，能够对应MySQL语句
+
+Django 提供一个查询快捷方式pk ，它表示“primary key” 的意思
+
+~~~django
+model.objects.get(pk=pk)  # 快捷方式
+~~~
+
+**核心思想：** 用面向对象的方式去操作数据库的创建表、增加、修改、删除、查询等操作。把面向对象中的类和数据库表一一对应，通过操作类和对象，对数据表实现数据操作，不需要写sql，由orm框架生成。
+
+**Django的ORM操作原理：**Django的orm操作本质上会根据对接的数据库引擎，翻译成对应的sql语句；所有使用Django开发的项目无需关心程序底层使用的是MySQL、Oracle、sqlite....，如果数据库迁移，只需要更换Django的数据库引擎即可
+
+- 步骤
+
+  **1.创建模型**
+
+  ~~~python
+  class Mete:
+      db_table #指明数据库表名
+      verbose_name = '别名'  # 含有复数s
+      verbose_name_plural=verbose_name  # 去除复数s
+  ~~~
+
+| 类型             | 说明                                                         |
+| :--------------- | :----------------------------------------------------------- |
+| AutoField        | 自动增长的IntegerField，通常不用指定，不指定时Django会自动创建属性名为id的自动增长属性 |
+| BooleanField     | 布尔字段，值为True或False                                    |
+| NullBooleanField | 支持Null、True、False三种值                                  |
+| CharField        | 字符串，参数max_length表示最大字符个数                       |
+| TextField        | 大文本字段，一般超过4000个字符时使用                         |
+| IntegerField     | 整数                                                         |
+| DecimalField     | 十进制浮点数， 参数max_digits表示总位数， 参数decimal_places表示小数位数 |
+| FloatField       | 浮点数                                                       |
+| DateField        | 日期， 参数auto_now表示每次保存对象时，自动设置该字段为当前时间，用于"最后一次修改"的时间戳，它总是使用当前日期，默认为False； 参数auto_now_add表示当对象第一次被创建时自动设置当前时间，用于创建的时间戳，它总是使用当前日期，默认为False; 参数auto_now_add和auto_now是相互排斥的，组合将会发生错误 |
+| TimeField        | 时间，参数同DateField                                        |
+| DateTimeField    | 日期时间，参数同DateField                                    |
+| FileField        | 上传文件字段                                                 |
+| ImageField       | 继承于FileField，对上传的内容进行校验，确保是有效的图片      |
+
+| 选项        | 说明                                                         |
+| :---------- | ------------------------------------------------------------ |
+| null        | 如果为True，表示允许为空，默认值是False                      |
+| blank       | 如果为True，则该字段允许为空白，默认值是False                |
+| db_column   | 字段的名称，如果未指定，则使用属性的名称                     |
+| db_index    | 若值为True, 则在表中会为此字段创建索引，默认值是False        |
+| default     | 默认                                                         |
+| primary_key | 若为True，则该字段会成为模型的主键字段，默认值是False，一般作为AutoField的选项使用 |
+| unique      | 如果为True, 这个字段在表中必须有唯一值，默认值是False        |
+
+在设置外键时，需要通过**on_delete**选项指明主表删除数据时，对于外键引用表数据如何处理，在django.db.models中包含了可选常量：
+
+- **CASCADE** 级联，删除主表数据时连通一起删除外键表中数据
+
+- **PROTECT** 保护，通过抛出**ProtectedError**异常，来阻止删除主表中被外键应用的数据
+
+- **SET_NULL** 设置为NULL，仅在该字段null=True允许为null时可用
+
+- **SET_DEFAULT** 设置为默认值，仅在该字段设置了默认值时可用
+
+- **SET()** 设置为特定值或者调用特定方法
+
+- **DO_NOTHING** 不做任何操作，如果数据库前置指明级联性，此选项会抛出**IntegrityError**异常
+
+  **2.生成迁移**
+
+  ~~~django
+  python manage.py makemigrations  # 生成迁移文件
+  python manage.py migrate  # 迁移同步到数据库
+  ~~~
+
+  **3.操作**
+
+  ~~~python
+  """改"""
+  save()   # save()方法保存到数据库中
+  model.objects.get().update()  # 使用模型类.objects.filter().update()，会返回受影响的行数
+  """增"""
+  create  # 通过模型类.objects.create()保存
+  """删"""
+  queryset.delete()  # 模型类对象delete
+  model.objects.filter().delete()  # 模型类.objects.filter().delete()
+  """查"""
+  get 查询单一结果，如果不存在会抛出模型类.DoesNotExist异常。
+  all 查询多个结果。  # 可切片[:] qs = BookInfo.objects.all()[0:2]
+  count 查询结果数量。
+  exclude 排除掉符合条件剩下的结果
+  filter 过滤出多个结果
+  __ 下划线过滤(filter)：
+  	__contains  # 是否包含
+      __endswith  # startswith、endswith：以指定值开头或结尾
+      __isnull  # 是否为null
+      __in  # 是否包含在范围内
+      year、month、day、week_day、hour、minute、second：对日期时间类型的属性进行运算
+      F对象 from django.db.model import F
+      Q对象 from django.db.model import Q	Q对象可以使用&、|连接，&表示逻辑与，|表示逻辑或
+      使用aggregate()过滤器调用聚合函数。聚合函数包括：Avg 平均，Count 数量，Max 最大，Min 最小，Sum 求和，被定义在django.db.models中
+  BookInfo.objects.all().order_by('bread')  # 升序
+  BookInfo.objects.all().order_by('-bread')  # 降序
+  由一到多的访问语法：
+  一对应的模型类对象.多对应的模型类名小写_set 例：
+  ~~~
+
+  
+
+-----------------
+
+**前后端分离**
+
+| 开发模式     | 优点                   | 缺点                    |
+| ------------ | ---------------------- | ----------------------- |
+| 前后端不分离 | 利于SEO(搜索引擎优化)  | 仅适合于纯网页的应用    |
+| 前后端分离   | 可以针对于不同的客户端 | 不利于SEO(搜索引擎优化) |
+
+**Restful风格设计**“REpresentational State Transfer”的缩写，可以翻译成“表现状态转换”
+
+[Restful风格设计]: https://www.cnblogs.com/wangwiz/p/restful.html
+
+- **关键点**
+
+  1.**URL地址尽量使用名词，不使用动词**。
+
+  2.**API中的名词应该使用复数，无论单个资源或者所有资源**。
+
+  3.**请求方式**
+
+  | 请求方式 | 说明                     |
+  | -------- | ------------------------ |
+  | GET      | 获取资源数据(单个或多个) |
+  | POST     | 新增资源数据             |
+  | PUT      | 修改资源数据             |
+  | DELETE   | 删除资源数据             |
+
+  4.**过滤信息**：**过滤参数可以放在查询字符串中**。
+
+  5.**响应数据**
+
+  ```python
+  GET /collection：返回资源对象的列表数据。
+  GET /collection/resource：返回单个资源对象数据。
+  POST /collection：返回新创建的资源对象数据。
+  PUT /collection/resource：返回完整的资源对象数据。
+  DELETE /collection/resource：返回空。
+  ```
+
+  6.**响应格式**：服务器返回的响应数据格式，应该尽量使用JSON。
+
+  7.**响应状态码**(常用)
+
+  | 状态码 | 含义                                                         |
+  | ------ | ------------------------------------------------------------ |
+  | 200    | 服务器成功返回用户请求的数据                                 |
+  | 201    | 用户新建数据成功。                                           |
+  | 204    | 用户删除数据成功。                                           |
+  | 404    | 用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。 |
+  | 500    | 服务器发生错误，用户将无法判断发出的请求是否成功。           |
+
+##### **DRF**
+
+——"jango REST framework"的缩写
+
+[DRF]: https://www.django-rest-framework.org/	"官方文档"
+[两个基本视图类、七个子视图类、五个视图扩展类、四个视图集]:<https://blog.csdn.net/feilzhang/article/details/81088400>
+
+**增**：校验请求数据 -> 执行反序列化过程 -> 保存数据库 -> 将保存的对象序列化并返回
+
+**删**：判断要删除的数据是否存在 -> 执行数据库删除
+
+**改**：判断要修改的数据是否存在 -> 校验请求的数据 -> 执行反序列化过程 -> 保存数据库 -> 将保存的对象序列化并返回
+
+**查**：查询数据库 -> 将数据序列化并返回
+
+- **优势**
+
+  1.提供了定义序列化器Serializer的方法，可以快速根据 Django ORM 或者其它库自动序列化/反序列化；
+
+  2.提供了丰富的类视图、Mixin扩展类，简化视图的编写；
+
+  3.丰富的定制层级：函数视图、类视图、视图集合到自动生成 API，满足各种需要；
+
+  4.多种身份认证和权限认证方式的支持；
+
+  5.内置了限流系统；
+
+  6.直观的 API web 界面；
+
+  7.可扩展性，插件丰富
+
+- 步骤
+
+```python
+    1.pip install djangorestframework  # 安装DRF框架
+    2.INSTALLED_APPS=['rest_framework']  # 注册应用
+    3.定义序列化器 serializers.py 通常会应用中创建该文件
+```
+
+```python
+from rest_framework import serializers
+
+class 序列化器类名(serializers.Serializer):
+    序列化器字段 = serializers.字段类型(选项参数)
+    # ...
+```
+
+- **字段类型和选项参数**
+
+| 字段                    | 字段构造方式                                                 |
+| :---------------------- | :----------------------------------------------------------- |
+| **BooleanField**        | BooleanField()                                               |
+| **NullBooleanField**    | NullBooleanField()                                           |
+| **CharField**           | CharField(max_length=None, min_length=None, allow_blank=False, trim_whitespace=True) |
+| **EmailField**          | EmailField(max_length=None, min_length=None, allow_blank=False) |
+| **RegexField**          | RegexField(regex, max_length=None, min_length=None, allow_blank=False) |
+| **SlugField**           | SlugField(max_length=50, min*length=None, allow_blank=False) 正则字段，验证正则模式 [-a-zA-Z0-9*-]+ |
+| **URLField**            | URLField(max_length=200, min_length=None, allow_blank=False) |
+| **UUIDField**           | UUIDField(format='hex_verbose')  format:  1) `'hex_verbose'` 如`"5ce0e9a5-5ffa-654b-cee0-1238041fb31a"`  2） `'hex'` 如 `"5ce0e9a55ffa654bcee01238041fb31a"`  3）`'int'` - 如: `"123456789012312313134124512351145145114"`  4）`'urn'` 如: `"urn:uuid:5ce0e9a5-5ffa-654b-cee0-1238041fb31a"` |
+| **IPAddressField**      | IPAddressField(protocol='both', unpack_ipv4=False, **options) |
+| **IntegerField**        | IntegerField(max_value=None, min_value=None)                 |
+| **FloatField**          | FloatField(max_value=None, min_value=None)                   |
+| **DecimalField**        | DecimalField(max_digits, decimal_places, coerce_to_string=None, max_value=None, min_value=None) max_digits: 最多位数 decimal_palces: 小数点位置 |
+| **DateTimeField**       | DateTimeField(format=api_settings.DATETIME_FORMAT, input_formats=None) |
+| **DateField**           | DateField(format=api_settings.DATE_FORMAT, input_formats=None) |
+| **TimeField**           | TimeField(format=api_settings.TIME_FORMAT, input_formats=None) |
+| **DurationField**       | DurationField()                                              |
+| **ChoiceField**         | ChoiceField(choices) choices与Django的用法相同               |
+| **MultipleChoiceField** | MultipleChoiceField(choices)                                 |
+| **FileField**           | FileField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL) |
+| **ImageField**          | ImageField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL) |
+| **ListField**           | ListField(child=, min_length=None, max_length=None)          |
+| **DictField**           | DictField(child=)                                            |
+
+​	**通用参数**：无论哪种字段类型都可以使用的选项参数
+
+| 参数名称           | 说明                                     |
+| ------------------ | ---------------------------------------- |
+| **read_only**      | 表明该字段仅用于序列化输出，默认False    |
+| **write_only**     | 表明该字段仅用于反序列化输入，默认False  |
+| **required**       | 表明该字段在反序列化时必须输入，默认True |
+| **default**        | 序列化和反序列化时使用的默认值           |
+| **validators**     | 该字段使用的验证器                       |
+| **error_messages** | 包含错误编号与错误信息的字典             |
+| **label**          | 用于HTML展示API页面时，显示的字段名称    |
+
+​	**常用参数**：
+
+| 参数名称       | 作用             |
+| -------------- | ---------------- |
+| **max_length** | 最大长度(字符串) |
+| **min_length** | 最小长度(字符串) |
+| **max_value**  | 最大值(数字)     |
+| **min_value**  | 最小值(数字)     |
+
+**RestAPI**
+
+###### 1.**序列化操作**
+
+​	**序列化模型继承：Serializer、ModelSerializer**
+
+- **嵌套序列化**
+
+  1.serializers.PrimaryKeyRelatedField()  # 参数queryset 或 read_only 必传一个
+
+  2.xxxSerializer()  # 使用关联的序列化模型
+
+  3.serializers.StringRelatedField()  # 使用关联模型的 __str__
+
+- **补充验证(vaildate)**
+
+  1.serializer模型Field的选项中添加 validators=[自定义的验证函数]
+
+  2.validate_字段名(self, value)  # serializer模型类中定义验证函数  适用于验证单个字段
+
+  3.validate(self, attrs)  # serializer模型类中定义验证函数 使用于验证多个字段。参数attrs实际上就是ModelSerializer(data=data) 传入进来的data
+
+- **class Meta:**
+
+  ​	model=Model 模型
+
+  ​	field='\__all__' 全部字段 或 指定('xx','xx')  # 元祖
+
+  ​	exclude=(xx,)  # 排除字段
+
+  ​	extra_kwargs  # 修改自动生成的字段选项和参数
+
+
+
+###### 2.**反序列化操作**
+
+ - **反序列化验证**
+
+   ~~~python
+   """
+   序列化器类(instance=None, data=empty, **kwarg)
+   ​	说明：
+   
+   ​	1）用于序列化时，将实例对象传给**instance**参数
+   ​	2)  用于反序列化时，将要被反序列化的数据传给**data**参数
+   """
+   serializer = xxxModelSerializer()
+   serializer.is_valid(raise_exception= True)  # 验证失败抛出异常
+   serializer.error  # 验证失败的数据
+   serializer.validated_data  # 验证成功反序列
+   serializer.save()
+   
+   # save()方法中含有create()与update()方法
+   ~~~
+
+[拓展类和视图集详解]:<https://blog.csdn.net/qq_31742423/article/details/83241461>
+
+###### 3.**APIView**
+
+视图继承APIView之后，传入视图的request对象是DRF框架提供的`Request`类的对象，视图继承APIView之后，响应时可以统一返回Response对象,Request类的对象有两个属性：
+
+| 属性名       | 说明                                                         |
+| ------------ | ------------------------------------------------------------ |
+| data         | 包含解析之后的请求体数据，已经解析为了字典或类字典，相当于Django原始request对象的body、POST、FILES属性。 |
+| query_params | 包含解析之后的查询字符串数据，相当于Django原始request对象的GET属性 |
+
+~~~python
+"""
+对比
+"""
+class xxxSerializer(APIView)
+
+def get(self, request):
+	xxx = request.GET.get('xxx')
+    
+------------------Request对象(query_params)------------------
+def get(self, request):
+    pass
+_____________________________________________________________
+
+def post(self, request):
+    json_dict = json.loads(request.body.decode())
+
+----------------------Request对象(data)----------------------
+def post(self, request):
+    serializer = xxxSerializer(data=request.data)
+~~~
+
+| Accept请求头     | 说明                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| application/json | 服务器会将原始响应数据转换为json数据进行返回，没指定Accept时，默认返回json |
+| text/html        | 服务器会将原始响应数据转换为html网页进行返回；               |
+
+~~~python
+"""
+对比
+"""
+return JsonResponse({'xx':xx})
+
+------------------Response对象------------------
+return Response({'xx':xx})
+~~~
+
+
+
+###### 4.**GenericAPIView**
+
+**1. 提供的关于序列化器使用的属性与方法**
+
+- 属性：
+
+  - **serializer_class**：指明视图使用的序列化器
+
+- 方法：
+
+  - **get_serializer_class(self)**
+
+    返回序列化器类，默认返回`serializer_class`，可以重写。
+
+  - **get_serializer(self, \*args,** **\**kwargs**)
+
+    返回创建序列化器类的对象，如果我们在视图中想要获取序列化器对象，可以直接调用此方法。
+
+~~~python
+class xxxSerializer(GenericAPIView):
+    serializer_call = xxxSerializer  # serializer模型
+    
+    """ → 调用 ← """
+    serializer = self.get_serializer()
+~~~
+
+**2. 提供的关于数据库查询的属性与方法**
+
+- 属性：
+
+  - **queryset**：指明使用的数据查询集
+
+- 方法：
+
+  - **get_queryset(self)**
+
+    返回视图使用的查询集，默认返回`queryset`属性，可以重写。
+
+  - **get_object(self)**
+
+    返回从视图使用的查询集中查询指定的对象(默认根据pk进行查询)，如查询不到，此方法会抛出Http404异常。
+
+~~~python
+class xxxSerializer(GenericAPIView):
+    queryset = XXX.objects.all()  # 模型
+    
+    """ → 调用 ← """
+    qs = self.get_queryset()  # 获取多个
+    qs = self.get_object()  # 获取单个
+~~~
+
+
+
+**3. 其他可以设置的属性**
+
+- **pagination_class**：指明分页控制类
+- **filter_backends**：指明过滤控制后端
+
+###### **5.视图类(Mixin)**
+
+**Mixin——拓展类(五个)**
+
+~~~python
+from rest_framework.generics import GenericAPIView
+from rest_framework import mixins
+
+from .serializers import BookInfoSerializer
+from .models import BookInfo
+
+
+class BookList(mixins.ListModelMixin, mixins.CreateModelMixin, GenericAPIView):
+    serializer_class = BookInfoSerializer
+    queryset = BookInfo.objects.all()
+    """
+    get:实现列表视图          --> ListModelMixin
+    post: 实现创建资源视图    --> CreateModelMixin
+    """
+    def get(self, request):
+        return self.list(request)
+    
+    def post(self, request):
+        return self.create(request)
+    
+    
+class BookDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, GenericAPIView):
+    serializer_class = BookInfoSerializer
+    queryset = BookInfo.objects.all()
+    """
+    get:实现快速返回一个存在的数据对象            --> RetrieveModelMixin
+    put:实现更新一个存在的数据对象               --> UpdateModelMixin
+    delete:实现删除一个存在的数据对象            --> DestroyModelMixin
+    """
+    def get(self, request, pk):
+        return self.retrieve(request)
+    
+    def put(self, request, pk):
+        return self.update(request)
+    
+    def delete(self, request, pk):
+        return self.destroy(request)
+~~~
+
+![Mixin](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/HGm*RL8gdyBKZvesngJArGvGVCxnSY0CXb.0jES8r7w!/b/dL8AAAAAAAAA&bo=tQwjAgAAAAADB7o!&rf=viewer_4)
+
+**5.子类视图(九个)**
+
+![子类视图](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/.ehkljtGov3jOG8TvLtAJhddk9qidn2dNJjfk8zQ92o!/b/dMMAAAAAAAAA&bo=rQyZAwAAAAADFwk!&rf=viewer_4)
+
+
+
+###### **6.视图集(ViewSet)**
+
+**视图集对象action属性**
+
+在视图集中，可以通过`视图集对象.action`获取所有执行action的操作。应用场景：重写get_serializer_class和get_queryset，根据不同的action操作返回不同的序列化器类和不同的查询集。
+
+~~~python
+"""
+动态操作序列化器类
+"""
+from rest_framework.decorators import action
+def get_serializer_class(self):
+    if self.action == 'list':
+        return '<list操作所使用的序列化器类>'
+    else:
+        return '<其他操作所使用的序列化器类>'
+~~~
+
+
+
+1）继承视图集父类**ViewSet**(继承自ViewSetMixin和APIView)。
+
+2）视图集中的处理方法不再以对应个请求方式(get、post等)命名，而是以对应的操作(action)命名。
+
+- list：提供一组数据
+- retrieve：提供单个数据
+- create：创建数据
+- update：保存数据
+- destory：删除数据
+
+3）在进行URL配置时，需要明确指明某个请求方式请求某个URL地址时，对应的是视图集中的哪个处理函数。
+
+**常用：**
+
+1） **ViewSet**
+
+继承自`APIView`与`ViewSetMixin`，作用也与APIView基本类似，提供了身份认证、权限校验、流量管理等。
+
+2）**GenericViewSet**
+
+继承自`GenericAPIView`与`ViewSetMixin`，可以直接搭配Mixin扩展类使用。
+
+3）**ModelViewSet**
+
+继承自`GenericViewSet`，同时包括了ListModelMixin、RetrieveModelMixin、CreateModelMixin、UpdateModelMixin、DestoryModelMixin。
+
+~~~python
+""" views.py"""
+from .serializers import BookInfoSerializer
+from .models import BookInfo
+from rest_framework.response import Response
+
+class BookInfoViewSet(ModelViewSet):
+    serializer_class = BookInfoSerializer
+    queryset = BookInfo.objects.all()
+
+    def latest(self, request):  # 获取最新数据
+        book = BookInfo.objects.latest('id')
+        serializer = self.get_serializer(book)
+        return Response(serializer.data)
+    
+    
+"""urls.py"""
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^books/$', views.BookInfoViewSet.as_view(
+        {'get': 'list', 'post': 'create'}
+    ), name='books-list'),
+    
+    url(r'^books/(?P<pk>\d+)/$', views.BookInfoViewSet.as_view(
+        {'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}
+    ), name='books-detail'),
+    
+    url(r'^books/latest/$', views.BookInfoViewSet.as_view(
+        {'get': 'latest'}
+    ), name='book-latest'),
+]
+~~~
+
+4）ReadOnlyModelViewSet
+
+继承自`GenericViewSet`，同时包括了ListModelMixin、RetrieveModelMixin。
+
+![视图集](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/Rz981by*65FAk1udsjRtJjy71TvjnGPTU4iYxFiwnQA!/b/dL4AAAAAAAAA&bo=iQo4BAAAAAADB50!&rf=viewer_4)
+
+###### **7.路由Routers**
+
+[路由routers]:<https://blog.csdn.net/runnoob_1115/article/details/78486920>
+
+REST framework提供了两个Router类：
+
+- **SimpleRouter**
+- **DefaultRouter**
+
+register(prefix, viewset, base_name)
+
+- prefix：该视图集的路由前缀
+- viewset：视图集
+- base_name：路由name名称的前缀
+
+**action装饰器**可以接收两个参数：
+
+- **methods**: 声明该action对应的请求方式，列表传递。
+
+- **detail:** 声明该action的路径是否与单一资源对应，及是否是xxx/<pk>/action方法名/。
+
+  - True 表示路径格式是`xxx/<pk>/action方法名/`
+  - False 表示路径格式是`xxx/action方法名/`
+
+  ~~~python
+  """ views.py """
+  from rest_framework.viewsets import ModelViewSet
+  from rest_framework.response import Response
+  from rest_framework.decorators import action
+  
+  from .serializers import BookInfoSerializer
+  from .models import BookInfo
+  
+  
+  class BookInfoViewSet(ModelViewSet):
+      serializer_class = BookInfoSerializer
+      queryset = BookInfo.objects.all()
+  
+      @action(methods=['get'], detail=False)
+      def latest(self, request):
+          book = BookInfo.objects.latest('id')
+          serializer = self.get_serializer(book)
+          return Response(serializer.data)
+  
+  """ urls.py """
+  from rest_framework.routers import SimpleRouter,DefaultRouter
+  from .views import BookInfoViewSet
+  
+  urlpatterns = [
+  
+  ]
+  
+  router = DefaultRouter()
+  # router = SimpleRouter()
+  router.register(r'books', BookInfoViewSet, base_name='books'),
+  urlpatterns += router.urls
+  ~~~
+
+1）SimpleRouter参数表
+
+![SimpleRouter参数表](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/Md3w6F.luo6wFFFEwVQKh2aa9VRkQsUCWjsJagfldhE!/b/dL8AAAAAAAAA&bo=WAZgAlgGYAIDByI!&rf=viewer_4)
+
+2) DefaultRouter参数表
+
+![DefaultRouter参数表](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/PQDfJW2STWjA0QmpUJi7tGljfOm0Aa.k261XMcipyNE!/b/dE0BAAAAAAAA&bo=UgawAlIGsAIDFzI!&rf=viewer_4)
+
+###### **8.功能**
+
+- **权限permissions**
+
+  ~~~python
+  REST_FRAMEWORK = {
+      'DEFAULT_PERMISSION_CLASSES': (
+          'rest_framework.permissions.XXX', # 权限类
+      )
+  }
+  """
+  DRF框架提供了四个权限控制类:
+  
+  AllowAny 允许所有用户
+  IsAuthenticated 仅通过认证的用户
+  IsAdminUser 仅管理员用户
+  IsAuthenticatedOrReadOnly 认证的用户可以完全操作，否则只能get读取
+  
+  from rest_framework.permission import IsAuthenticated
+  """
+  
+  class XXX(APIView):
+      permission_class = [权限类名称]  # 元祖或列表
+      
+  自定义权限：继承BasePermission
+  # 自定义权限控制类
+  class MyPermission(BasePermission):
+      def has_permission(self, request, view):
+          """控制用户对使用此权限控制类视图是否有访问权限：True: 有 False: 没有"""
+          return True
+  
+      def has_object_permission(self, request, view, obj):
+          """控制用户对使用此权限控制类视图中的某个对象是否有访问权限：True: 有 False: 没有"""
+          # 需求：id为1或3的有访问权限，其他的没有
+          if obj.id in (1, 3):
+              return True
+  
+          return False
+  ~~~
+
+- **认证Authentication**
+
+  ~~~python
+  REST_FRAMEWORK = {
+      'DEFAULT_AUTHENTICATION_CLASSES': (
+          'rest_framework.authentication.XXX',  # 认证类
+      )
+  }
+  
+  """
+  SessionAuthentication  # session认证
+  BasicAuthentication  # 基本认证
+  """
+  
+  from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+  
+  class XXX(APIView):
+      authentication_class = [认证类名称]  # 元祖或列表
+  ~~~
+
+- **限流**
+
+  ~~~python
+  """ 配置项 """
+  REST_FRAMEWORK = {
+      'DEFAULT_THROTTLE_CLASSES': (
+          # 针对未登录(匿名)用户的限流控制类
+          'rest_framework.throttling.AnonRateThrottle',
+          # 针对登录(认证)用户的限流控制类
+          'rest_framework.throttling.UserRateThrottle'
+      ),
+      # 指定限流频次,如需自定义，修改下面参数
+      'DEFAULT_THROTTLE_RATES': {
+          # 认证用户的限流频次
+          'user': '5/minute',  # 固定
+          # 匿名用户的限流频次
+          'anon': '3/minute',  # 固定
+      },
+  }
+  
+  """ 
+  BaseThrottle			--> 基础限流类
+  SimpleRateThrottle		--> 简单限流类
+  AnonRateThrottle		--> 匿名用户
+  UserRateThrottle		--> 登录用户
+  ScopedRateThrottle		--> 范围，用于自定义
+  """
+  from rest_framework.throttling import 限流类
+  from rest_framework.views import APIView
+  
+  class ExampleView(APIView):
+      throttle_classes = [限流类]
+  ~~~
+
+- **过滤**：返回列表数据的API接口必须ListModelMixin返回数据
+
+  ~~~python
+  pip install django-filter
+  需要注册应用：'django_filters'
+  
+  """ 配置项 """
+  REST_FRAMEWORK = {
+      'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+  }
+  
+  from rest_framework.generics import ListAPIView
+  class ExampleView(ListAPIView):
+      queryset = 模型.objects.all()
+      serializer_class = 模型Serializer
+      filter_fields = ('id', )
+  ~~~
+
+- **排序**：返回列表数据的API接口必须ListModelMixin返回数据
+
+  ~~~python
+  """
+  访问参数: /?ordering=-id  # id倒序查询
+  """
+  class ExampleListView(ListAPIView):
+      queryset = BookInfo.objects.all()
+      serializer_class = BookInfoSerializer
+      filter_backends = [OrderingFilter]
+      ordering_fields = ('id',)
+  ~~~
+
+- **分页**：返回列表数据的API接口必须ListModelMixin返回数据
+
+  ~~~python
+  """ 
+  访问参数：/?page=<页码>&page_size=<页容量>
+  """
+  REST_FRAMEWORK = {
+      'DEFAULT_PAGINATION_CLASS':  '<全局分页类>',
+      'PAGE_SIZE': <页容量>  
+  }
+  
+  分页类:
+  1. PageNumberPagination
+  	page_size 每页数目
+  	page_query_param 前端发送的页数关键字名，默认为"page"
+  	page_size_query_param 前端发送的每页数目关键字名，默认为None
+  	max_page_size 前端最多能设置的每页数量
+  2. LimitOffsetPagination
+  	default_limit 默认限制，默认值与PAGE_SIZE设置一直
+  	limit_query_param limit参数名，默认'limit'
+  	offset_query_param offset参数名，默认'offset'
+  	max_limit 最大limit限制，默认None
+      
+  关闭分页功能：pagination_class = None
+  ~~~
+
+- **异常处理**
+
+  ~~~python
+  """
+  REST framework提供了异常处理，可以出来以下异常：
+  
+  APIException 所有异常的父类
+  ParseError 解析错误
+  AuthenticationFailed 认证失败
+  NotAuthenticated 尚未认证
+  PermissionDenied 权限决绝
+  NotFound 未找到
+  MethodNotAllowed 请求方式不支持
+  NotAcceptable 要获取的数据格式不支持
+  Throttled 超过限流次数
+  ValidationError 校验失败
+  
+  以外的异常需要自定义
+  """
+  ps:自定义需要修改配置项,指定为自定义
+  REST_FRAMEWORK = {
+      'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler'
+  }
+  
+  from rest_framework.views import exception_handler as drf_exception_handler
+  from rest_framework import status
+  from django.db import DatabaseError
+  from rest_framework.response import Response
+  
+  
+  # 自定义异常类
+  def exception_handler(exc, context):
+      response = drf_exception_handler(exc, context)
+      
+      if response is None:
+          if isinstance(exc, DatabaseError):
+              response = Response({'error': '数据库异常'}, status=status.HTTP_507_INSUFFICIENT_STORAGE)
+      return response
+  ~~~
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Django进阶]:<https://blog.csdn.net/tmpbook/article/details/51540542>
+
+----------
+
+[HayStack模块]:<http://www.cnblogs.com/du-jun/p/10595879.html>
+
+- **haystack(全文检索)**
+
+- **介绍**
+
+Haystack是django的开源全文搜索框架(全文检索不同于特定字段的模糊查询，使用全文检索的效率更高 )，该框架支持**Solr**,**Elasticsearch**,**Whoosh**, ***Xapian*搜索引擎它是一个可插拔的后端（很像Django的数据库层），所以几乎你所有写的代码都可以在不同搜索引擎之间便捷切换
+
+- **步骤**
+
+  1.安装：pip install django-haystack
+
+  2.配置：INSTALLED_APPS(创建应用)和settings.py(添加配置项 HAYSTACK_CONNECTIONS 指定搜索后端)
+
+  3.处理数据：↓↓↓ 例子 ↓↓↓
+
+~~~python
+from haystack import indexes
+
+from .models import SKU
+
+class SKUIndex(indexes.SearchIndex, indexes.Indexable):
+    """SKU索引数据模型类"""
+    text = indexes.CharField(document=True, use_template=True)
+
+    def get_model(self):
+        """返回建立索引的模型类"""
+        return SKU
+
+    def index_queryset(self, using=None):
+        """返回要建立索引的数据查询集"""
+        return self.get_model().objects.filter(is_launched=True)
+~~~
+
+​	4.创建模板文件.txt	内容列如：{{ object.title }}
+
+​	5.修改前端、生成索引命令：python manage.py rebuild_index
+
+​	6.优化：分词、创建搜索栏、高亮显示	请点击 ↑ 上面 ↑ 链接
+
+###### 9.**JWT Token**
+
+~~~python
+pip install djangorestframework-jwt
+~~~
+
+
+
+1)头部(header)
+
+jwt的头部承载两部分信息：
+
+- 声明类型,这里是jwt
+- 声明加密的算法 通常直接使用 HMAC SHA256  # hmac是Hash-based Message Authentication Code的简写，就是指哈希消息认证码，包含有很多种哈希加密算法
+
+2）载荷(payload)
+
+载荷就是存放有效信息的地方。这个名字像是特指飞机上承载的货品，这些有效信息包含三个部分
+
+- 标准中注册的声明
+- 公共的声明
+- 私有的声明
+
+**标准中注册的声明** (建议但不强制使用) ：
+
+- **iss**: jwt签发者
+- **sub**: jwt所面向的用户
+- **aud**: 接收jwt的一方
+- **exp**: jwt的过期时间，这个过期时间必须要大于签发时间
+- **nbf**: 定义在什么时间之前，该jwt都是不可用的.
+- **iat**: jwt的签发时间
+- **jti**: jwt的唯一身份标识，主要用来作为一次性token,从而回避重放攻击。
+
+**公共的声明** ： 公共的声明可以添加任何的信息，一般添加用户的相关信息或其他业务需要的必要信息。但不建议添加敏感信息，因为该部分在客户端可解密。
+
+**私有的声明** ： 私有声明是提供者和消费者所共同定义的声明，一般不建议存放敏感信息，因为base64是对称解密的，意味着该部分信息可以归类为明文信息。
+
+###### uwsig和WSGI
+
+- **uwsgi**
+
+~~~python
+# 启动uwsgi
+wsgi和uwsgi同级下，打开终端输入命令：uwsgi --ini uwsgi的文件
+例子：uwsgi --ini uwsgi.ini
+
+# 杀死uwsgi
+ps aux|grep uwsgi
+sudo kill -9 最小的进程号
+
+"""注意事项：虽然不加载静态文件,但不能注释配置项目"""
+STATIC_URL = '/static/'
+~~~
+
+
+
+#### Celery - 分布式任务队列
+
+[Celery官方文档]:<http://docs.celeryproject.org/en/latest/userguide/monitoring.html>
+
+Celery的架构由三部分组成，消息中间件（message broker），任务执行单元（worker）和任务执行结果存储（task result store）组成。
+
+1. 简单：一单熟悉了celery的工作流程后，配置和使用还是比较简单的
+2. 高可用：当任务执行失败或执行过程中发生连接中断，celery 会自动尝试重新执行任务
+3. 快速：一个单进程的celery每分钟可处理上百万个任务
+4. 灵活： 几乎celery的各个组件都可以被扩展及自定制
+
+- 启动Celery Worker 开始监听并执行任务：celery -A tasks worker --loglevel=info
+
+  | Django Celery  通用命令            | 命令                                         |
+  | ---------------------------------- | :------------------------------------------- |
+  | 查看celery worker状态              | python manage.py status                      |
+  | 查看当前正在运行的task             | python manage.py inspect active              |
+  | 查看当前的队列的具体信息           | python manage.py active-queues               |
+  | 输出worker的内存占用(需要psutil库) | python manage.py celery inspect memdump      |
+  | 输出worker的统计信息               | python manage.py celery inspect stats        |
+  | 清空队列                           | python manage.py celery purge -Q[queue_name] |
+
+  | Redis celery            | 命令                                                         |
+  | ----------------------- | ------------------------------------------------------------ |
+  | 查看当前存储的所有的key | redis-cli -h HOST -p PORT -n DB_NUMBER(默认为0) keys *       |
+  | 清空队列全部内容        | redis-cli -h HOST -p PORT -n DB_NUMBER ltrim key 0 0         |
+  | 清除前100条消息         | redis-cli -h HOST -p PORT -n DB_NUMBER ltrim key 100 -1      |
+  | 保留前100条消息         | redis-cli -h HOST -p PORT -n DB_NUMBER ltrim key 0 100       |
+  | 查看消息长度            | redis-cli -h HOST -p PORT -n DB_NUMBER llen [上面列出的key的最后一段] |
+  | 查看消息队列具体内容    | redis-cli -h HOST -p PORT -n DB_NUMBER LRANGE key 0 -1       |
+
+  | Rabbitmq Celery | 命令                                                         |
+  | --------------- | ------------------------------------------------------------ |
+  | 队列状态        | sudo rabbitmqctl list_queues                                 |
+  | 队列消息查看    | sudo python rabbitmqadmin get queue=queuename requeue=true count=10 |
+
+
+
+
+#### Jinja2
+
+[Jinja2]:<http://jinja.pocoo.org/>	"官方文档"
+
+- **Jinja2的优势**
+
+1. 相对于Template，jinja2更加灵活，它提供了控制结构，表达式和继承等。
+2. 相对于Mako，jinja2仅有控制结构，不允许在模板中编写太多的业务逻辑。
+3. 相对于Django模板，jinja2性能更好。
+4. Jinja2模板的可读性很棒。
+
+- **安装与检查**
+
+~~~python
+pip3 install jinja2  # 安装
+python -c "import jinja2"  # 检查是否安装，必须用双引号
+~~~
+
+- **基本语法**
+
+1. 控制结构 {% %}
+2. 变量取值 {{ }}
+3. 注释 {# #}
+
+~~~python
+"""
+例子
+"""
+迭代列表：
+<ul>
+{% for user in users %}
+<li>{{ user.username|title }}</li>
+{% endfor %}
+</ul>
+迭代字典：
+<dl>
+{% for key, value in my_dict.iteritems() %}
+<dt>{{ key }}</dt>
+<dd>{{ value}}</dd>
+{% endfor %}
+</dl>
+    
+↓↓↓↓ Jinja2变量 ↓↓↓
+    
+<p>this is a dicectory:{{ mydict['key'] }} </p>
+<p>this is a list:{{ mylist[3] }} </p>
+<p>this is a object:{{ myobject.something() }} </p>
+~~~
+
+| 变量           | 描述                         |
+| -------------- | :--------------------------- |
+| loop.index     | 当前迭代的索引（从1开始）    |
+| loop.index0    | 当前迭代的索引（从0开始）    |
+| loop.first     | 是否是第一次迭代，返回bool   |
+| loop.last      | 是否是最后一次迭代，返回bool |
+| loop.length    | 序列中的项目数量             |
+| loop.revindex  | 到循环结束的次数（从1开始）  |
+| loop.revindex0 | 到循环结束的次数(从0开始）   |
+
+- **jinja2的过滤器**
+
+| 过滤器名称  | 说明                                         |
+| ----------- | :------------------------------------------- |
+| safe        | 渲染时值不转义                               |
+| capitialize | 把值的首字母转换成大写，其他子母转换为小写   |
+| lower       | 把值转换成小写形式                           |
+| upper       | 把值转换成大写形式                           |
+| title       | 把值中每个单词的首字母都转换成大写           |
+| trim        | 把值的首尾空格去掉                           |
+| striptags   | 渲染之前把值中所有的HTML标签都删掉           |
+| join        | 拼接多个值为字符串                           |
+| replace     | 替换字符串的值                               |
+| round       | 默认对数字进行四舍五入，也可以用参数进行控制 |
+| int         | 把值转换成整型                               |
+
+~~~python
+"""
+例子
+"""
+{{ 'abc' | captialize  }}
+# Abc
+
+{{ 'abc' | upper  }}
+# ABC
+ 
+{{ 'hello world' | title  }}
+# Hello World
+ 
+{{ "hello world" | replace('world','daxin') | upper }}
+# HELLO DAXIN
+ 
+{{ 18.18 | round | int }}
+# 18
+~~~
+
+- **Jinja2的宏**
+
+~~~python
+"""
+说明：宏类似于Python中的函数，我们在宏中定义行为，还可以进行传递参数
+
+列子
+"""
+{% macro input(name,age=18 %}   # 参数age的默认值为18
+ 
+ <input type='text' name="{{ name }}" value="{{ age }}" >
+ 
+{% endmacro %}
+~~~
+
+- Jinja2的继承和Super函数
+
+~~~python
+"""
+说明：jinja2中最强大的部分就是模板继承。模板继承允许我们创建一个基本(骨架)文件，其他文件从该骨架文件继承，然后针对自己需要的地方进行修改
+
+例子：骨架文件base.html为例
+"""
+~~~
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="style.css"/>
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+<body>
+<div id="content">{% block content %}{% endblock %}</div>
+<div id="footer">
+    {% block  footer %}
+    <script>This is javascript code </script>
+    {% endblock %}
+</div>
+</body>
+</html>
+~~~
+
+~~~python
+"""
+继承base.html
+"""
+{% extend "base.html" %}       # 继承base.html文件
+ 
+{% block title %} Dachenzi {% endblock %}   # 定制title部分的内容
+ 
+{% block head %}
+    {{  super()  }}        # 用于获取原有的信息
+    <style type='text/css'>
+    .important { color: #FFFFFF }
+    </style>
+{% endblock %}   
+ 
+# 其他不修改的原封不同的继承
+~~~
+
+- **Python使用Jinja2**
+
+~~~python
+from jinja2 import PackageLoader,Environment
+env = Environment(loader=PackageLoader('python_project','templates'))    # 创建一个包加载器对象
+ 
+template = env.get_template('bast.html')    # 获取一个模板文件
+template.render(name='daxin',age=18)   # 渲染
+
+"""
+说明
+"""
+PackageLoader()的两个参数为：python包的名称，以及模板目录名称。
+get_template()：获取模板目录下的某个具体文件。
+render()：接受变量，对模板进行渲染
+~~~
+
+#### Nginx
+
+- **安装**
+
+  ~~~nginx
+  apt-get install -y build-essential libssl-dev libtool libpcre3 libpcre3-dev make openssl zlib1g-dev  # 依赖包
+  apt-get install nginx -y
+  netstat -tnulp | grep nginx # 检查效果
+  
+  systemctl start|stop|reload nginx  # 启动停止
+  nginx -t                 # 检查默认配置文件
+  nginx -t -c file.conf    # 指定配置件进行检查
+  ~~~
+
+- **配置**
+
+| 目录     | 路径                                              |
+| -------- | ------------------------------------------------- |
+| 工作目录 | /etc/nginx                                        |
+| 执行文件 | /usr/sbin/nginx                                   |
+| 日志目录 | /var/log/nginx                                    |
+| 启动文件 | /etc/init.d/nginx                                 |
+| web目录  | /var/www/html/，首页文件是index.nginx-debian.html |
+
+~~~nginx
+# 参数说明
+
+- 全局配置段
+user www-data;  # user设置用户名，默认www-data
+worker_processes auto； # 设置并发连接数，与cpu有关，如：1核设置1 可以选择auto自动
+error_log  # nginx的错误日志，后面接指定的路径存放
+pid  # nginx主进程 可以通过命令 cat /run/nginx.pid 查看
+events                      # 定义事件相关的属性
+    worker_connections      # 一个进程允许处理的最大连接数
+
+- http配置段
+include mime.types;  # 文件拓展名与文件类型映射表
+default_type application/octet-stream;  # 默认文件类型
+"""以下四个和文件传输有关"""
+sendfile on;                              # 开启高效文件传输模式。
+autoindex on;                             # 开启目录列表访问，合适下载服务器，默认关闭。
+tcp_nopush on;                            # 防止网络阻塞
+tcp_nodelay on;                           # 防止网络阻塞
+
+keepalive_timeout 120;                    # 长连接超时时间，单位是秒
+gzip on;                                  # 开启gzip压缩输出
+
+- server常见配置属性
+server{
+    listen xxx;  # listen 可以监听ip:port,ip,port,default_server
+    server_name 主机名;  # 定义server监听的域名，当域名匹配时，才进行下一步操作  ps：可以完整配置、前缀正则样式、后缀正则样式
+    root 路径  # 定义server相应请求的html文件所在的路径
+    index 文件  # 定义响应请求后返回的文件名称或格式
+    return 状态码  # 定义响应请求后返回的http状态码
+}
+
+- location常见配置属性
+location / ps: (普通匹配与正则匹配) {
+    # 基本属性
+    root   /var/www/html;                    # 指定响应请求的文件所在路径
+    index  index.php index.html index.htm;    # 指定响应请求的默认文件名称
+    expires 7d;                                # 指定响应请求的文件过期时间，一般用于静态文件
+    try_files $uri $uri/ =404;                # 如果root指定的路径下有查找的文件，就返回，否则报错
+	# 临时跳转
+    return 302 http://sswang.com/;            # 访问旧url的时候，临时跳转到新url，两个url均不失效
+    # 访问控制
+    stub_status on;                          # 开启nginx的状态页面，默认关闭
+    allow 127.0.0.1;                      # 允许的访问地址
+    deny all;                                # 默认进制所有访问
+    # 目录列表
+    alias   /var/www/upload;        # 指定查看文件列表路径(绝对路径) ps:该alias指定的目录下，不允许出现index属性指定的文件。
+    autoindex on;                     # 开启目录自动索引
+    autoindex_exact_size off;     # 默认on，显示文件确切大小(bytes)。off表示显示文件的大概大小(kB/MB/...)
+    autoindex_localtime on;      # 默认off，显示的文件时间为GMT时间。on表示显示文件的服务器时间
+    
+    # ps:root 表示 location 匹配内容的相对路径,alias 表示 一个绝对路径。
+}
+
+~~~
+
+- **正向代理&反向代理&负载均衡**
+
+![正向代理](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/6roFzzFuAbDU9B6OmW*9JUhzd2f4EXDJHeqGB7fIgc8!/b/dIMAAAAAAAAA&bo=PgOlAAAAAAADB7o!&rf=viewer_4)
+
+**正向代理及用途**
+
+正向代理 是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端必须要进行一些特别的设置才能使用正向代理。
+
+1) 访问原来无法访问的资源，如google
+
+2)可以做缓存,加速访问资源
+
+3) 对客户端访问授权，上网进行认证
+
+4）代理可以记录用户访问记录（上网行为管理），对外隐藏用户信息
+
+![反向代理](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/5qdY9LlGrYrmrOQr337jv.bpmX4T79YV7zJFcnaOYc4!/b/dFMBAAAAAAAA&bo=NwPqAAAAAAADF.w!&rf=viewer_4)
+
+**反向代理及作用**
+
+反向代理（Reverse Proxy）实际运行方式是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。
+
+1)保证内网的安全，可以使用反向代理提供WAF功能，阻止web攻击
+
+2)负载均衡，通过反向代理服务来优化网站的负载
+
+![负载均衡](http://m.qpic.cn/psb?/V13ZfZ4l46I0Ky/don8ClQ3Lrg73AIJTSURpZQP902OXtwizrLuJvC7IbQ!/b/dLgAAAAAAAAA&bo=KANVAgAAAAADF04!&rf=viewer_4)
+
+**负载均衡**
+
+~~~nginx
+upstream backend  {
+    # server ip:port 可选项;
+    server 127.0.0.1:8000 backup;  # 备份，不会启动，全部服务器挂掉，备份服务器才会启动
+    server 127.0.0.1:8001 weight=1;
+    server 127.0.0.1:8001 weight=2;
+~~~
+
+- 轮询(默认)：请求按顺序逐一分配到不同的后端服务器。
+- weight：指定轮询权重，值越大，分配到的几率就越高，适用于后端服务器性能不均衡情况。写法ps: ip:port 后加 weight=num
+- ip_hash：按访问IP的哈希结果分配请求，分配后访客访问固定后端服务器，有效的解决动态网页会话共享问题。写法ps: 在ip:port 上面加 ip_hash;
+- fair：基于后端服务器的响应时间来分配请求，响应时间短的优先分配。
+- url_hash：按访问URL的哈希结果分配请求，使同URL定向到同一台后端服务器，可提高后端缓存服务器的效率。
+
+
+
+#### Vue(前端框架)
+
+- 启动前端项目
+
+  ~~~python
+  1.npm install  # 编译文件
+  2.npm run dev  #运行项目
+  ~~~
+
+  
+
+- 解决cors跨域请求
+
+  ~~~python
+  1.pip install django-cors-headers
+  2.MIDDLEWARE = [
+  	'corsheaders.middleware.CorsMiddleware', # django此处为注册的中间件
+  ]
+  3.CORS_ORIGIN_ALLOW_ALL=True
+  CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
+  ~~~
+
+  
+
+
+
+# ※ 第三方工具 ※
+
+#### FastDFS
+
+[FastDFS]:<https://blog.csdn.net/gymaisyl/article/details/84554986>	"安装"
+[FastDFS]:<https://blog.csdn.net/gymaisyl/article/details/84555620>	"Python的使用"
+
+- **介绍**
+
+FastDFS是用c语言编写的一款开源的分布式文件系统。FastDFS为互联网量身定制，充分考虑了冗余备份、负载均衡、线性扩容等机制，并注重高可用、高性能等指标，使用FastDFS很容易搭建一套高性能的文件服务器集群提供文件上传、下载等服务
+
+**Tracker**：管理集群，tracker也可以实现集群。每个tracker节点地位平等。收集Storage集群的状态。
+
+**Storage**：实际保存文件
+
+Storage分为多个组，每个组之间保存的文件是不同的。每个组内部可以有多个成员，组成员内部保存的内容是一样的，组成员的地位是一致的，没有主从的概念。
+
+- **FastDFS架构**
+
+FastDFS架构包括 Tracker server和Storage server。客户端请求Tracker server进行文件上传、下载，通过Tracker server调度最终由Storage server完成文件上传和下载。
+
+Tracker server作用是负载均衡和调度，通过Tracker server在文件上传时可以根据一些策略找到Storage server提供文件上传服务。可以将tracker称为追踪服务器或调度服务器。
+
+Storage server作用是文件存储，客户端上传的文件最终存储在Storage服务器上，Storage server没有实现自己的文件系统而是利用操作系统 的文件系统来管理文件。可以将storage称为存储服务器。
+
+| 框架   | FastDFS                                                    |
+| ------ | ---------------------------------------------------------- |
+| django | <https://blog.csdn.net/linzi1994/article/details/83045628> |
+
+
+
+#### Docker
+
+[Docker中文文档]:http://www.docker.org.cn/book/
+
+- **介绍**
+
+Docker是一种新兴的虚拟化技术，能够一定程度上的代替传统虚拟机。不过，Docker 跟传统的虚拟化方式相比具有众多的优势。我也将Docker类比于Python虚拟环境，可以有效的配置各个版本的开发环境
+
+**镜像(Image)**
+
+镜像，从认识上简单的来说，就是面向对象中的类，相当于一个模板。从本质上来说，镜像相当于一个文件系统。Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。
+
+**容器(Container)**
+
+容器，从认识上来说，就是类创建的实例，就是依据镜像这个模板创建出来的实体。容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的命名空间。因此容器可以拥有自己的root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。
+
+**仓库(Repository)**
+
+仓库，从认识上来说，就好像软件包上传下载站，有各种软件的不同版本被上传供用户下载。镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，Docker Registry 就是这样的服务。
+
+- **优势**
+
+**更高效的利用系统资源**：由于容器不需要进行硬件虚拟以及运行完整操作系统等额外开销，Docker 对系统资源的利用率更高。无论是应用执行速度、内存损耗或者文件存储速度，都要比传统虚拟机技术更高效。因此，相比虚拟机技术，一个相同配置的主机，往往可以运行更多数量的应用。
+
+**更快速的启动时间**：传统的虚拟机技术启动应用服务往往需要数分钟，而Docker 容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。
+一致的运行环境：开发过程中一个常见的问题是环境一致性问题。由于开发环境、测试环境、生产环境不一 
+致，导致有些bug 并未在开发过程中被发现。而Docker 的镜像提供了除内核外完整的运行时环境，确保了应用运行环境一致性，从而不会再出现「这段代码在我机器上没问题啊」这类问题。
+
+**持续交付和部署**：Docker是build once，run everywhere. 使用Docker 可以通过定制应用镜像来实现持续集成、持续交付、部署。开发人员可以通过Dockerfile 来进行镜像构建，并结合持续集成(Continuous Integration) 系统进行集成测试，而运维人员则可以直接在生产环境中快速部署该镜像，甚至结合持续部署(Continuous Delivery/Deployment) 系统进行自动部署。
+
+**更轻松的迁移**：Docker 使用的分层存储以及镜像的技术，使得应用重复部分的复用更为容易，也使得应用的维护更新更加简单，基于基础镜像进一步扩展镜像也变得非常简单。此外，Docker 团队同各个开源项目团队一起维护了一大批高质量的官方镜像，既可以直接在生产环境使用，又可以作为基础进一步定制，大大的降低了应用服务的镜像制作成本。使用Dockerfile 使镜像构建透明化，不仅仅开发团队可以理解应用运行环境，也方便运维团队理解应用运行所需条件，帮助更好的生产环境中部署该镜像。
+
+| image                | 命令                               |
+| -------------------- | ---------------------------------- |
+| 下载指定的镜像       | docker image pull xxx:tag          |
+| 列出本地所有镜像文件 | docker image ls                    |
+| 删除指定的镜像       | docker image rm (image_name or id) |
+
+| container                   | 命令                            |
+| --------------------------- | ------------------------------- |
+| 显示所有容器                | docker container ls = docker ps |
+| 启动一个容器,注意启动的参数 | docker container run            |
+| 获取nginx1运行时的信息      | docker inspect nginx1           |
+| 创建一个新的容器            | docker create                   |
+| 连接到某个容器              | docker attach                   |
+| 获取container的日志         | docker logs                     |
+| 重起容器                    | docker restart                  |
+| 停止容器                    | docker stop                     |
+| 杀掉一个容器                | docker kill                     |
+| 删除一个容器                | docker rm                       |
+
+- **安装**
+
+  ~~~shell
+  # 下载：apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+  # 启动：systemctl start|stop|restart|status docker
+  ~~~
+
+- **镜像命令**
+
+| 作用         | 命令                                                         |
+| ------------ | ------------------------------------------------------------ |
+| 搜索镜像     | docker search [image_name]                                   |
+| 获取镜像     | docker pull [image_name]                                     |
+| 查看镜像     | docker images                                                |
+| 查看镜像历史 | docker history [image_name]                                  |
+| 镜像重命名   | docker tag [old_image]:[old_version] [new_image]:[new_version] |
+| 删除镜像     | docker rmi [iamge_id/iamge_name:image_version]               |
+| 导出镜像     | docker save -o [文件包] [镜像]                               |
+| 导入镜像     | docker load < [iamge_name.tar]                               |
+
+- **容器命令**
+
+| 作用             | 命令                                              |
+| ---------------- | ------------------------------------------------- |
+| 查看容器         | docker ps -a                                      |
+| 启动容器         | docker run <参数，可选> [image_name] [执行的命令] |
+| 关闭容器         | docker stop [container_id]                        |
+| 删除容器         | docker rm [comtainer_id]                          |
+| 查看容器日志     | docker logs [container_id]                        |
+| 查看容器详细信息 | docker inspect [container_id]                     |
+
+**ps: 参数说明**
+
+-d  后台已守护形式运行
+
+--name 给容器自定义一个名字
+
+-i  让容器的标准输入保持打开
+
+-t  让docker分配一共伪终端
+
+/bin/bash  执行一个命令
+
+~~~python
+命令格式：
+docker exec -it 容器id /bin/bash  # 手工方式进入容器
+docker run --name [container_name] -it [docker_image] /bin/bash  # 创建容器并进入容器
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
