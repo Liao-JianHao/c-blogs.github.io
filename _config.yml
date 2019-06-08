@@ -87,7 +87,7 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+ba_track_id: 5fa39a878ae2bbaee87306af8c62122d
 
 # Google Analytics
 ga_track_id: 'UA-141676689-1'            # Format: UA-xxxxxx-xx
@@ -112,16 +112,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "我还没有朋友,你愿意吗？",
+        href: "http://www.baidu.com"
     }
 ]
