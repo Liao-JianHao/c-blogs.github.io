@@ -112,7 +112,12 @@ service-worker: true
 # Friends
 friends: [
     {
+<<<<<<< HEAD
+        title: "WY",
+        href: "http://zhengwuyang.com"
+=======
         title: "我还没有朋友,你愿意吗？",
         href: "http://www.baidu.com"
+>>>>>>> 4d4e9a2f9a698c1faae468ce4be8302ce84b67ef
     }
 ]
