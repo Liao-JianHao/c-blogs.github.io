@@ -112,7 +112,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "我还没有朋友,你愿意吗？",
-        href: "http://www.baidu.com"
+        title: "qiubaiying",
+        href: "https://github.com/qiubaiying"
     }
 ]
