@@ -91,7 +91,9 @@
                     {% endif %}
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }} <span id="busuanzi_container_site_pv">
+    总访问次数:<span id="busuanzi_value_site_pv"></span>
+</span>
                     <br>
                     Theme on <a href="{{ site.github_repo }}">GitHub</a> |
                     <iframe
@@ -268,3 +270,5 @@
 </script>
 {% endif %}
 
+<!-- 统计 -->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
