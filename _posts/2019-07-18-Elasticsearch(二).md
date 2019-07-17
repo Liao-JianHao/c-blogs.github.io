@@ -2,7 +2,7 @@
 layout:     post
 title:      Elasticsearch(二)
 subtitle:   Elasticsearch
-date:       2019-07-17
+date:       2019-07-18
 author:     Mr.C
 header-img: img/es2.jpg
 catalog: true
@@ -200,7 +200,7 @@ GET _cluster/health  # 查看集群的健康状况
 >> 动态映射：在关系数据库中，需要事先创建数据库，然后在该数据库实例下创建数据表，然后才能在该数据表中插入数据。而ElasticSearch中不需要事先定义映射（Mapping），文档写入ElasticSearch时，会根据文档字段自动识别类型，这种机制称之为动态映射 <br> 
 静态映射：在ElasticSearch中也可以事先定义好映射，包含文档的各个字段及其类型等，这种方式称之为静态映射
 
-#### 数据类型
+## 数据类型
 
 - **字符串类型**
     
@@ -238,7 +238,7 @@ GET _cluster/health  # 查看集群的健康状况
 - **IP类型**
     - **ip类型**的字段用于存储IPv4和IPv6的地址
 
-#### 类型映射
+## 类型映射
 
 - enabled：仅存储、不做搜索和聚合分析
 - index：是否构建倒排索引（即是否分词，设置false，字段将不会被索引）
