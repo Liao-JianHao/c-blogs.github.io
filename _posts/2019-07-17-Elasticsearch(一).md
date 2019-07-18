@@ -105,7 +105,7 @@ tags:
 |modules||包含所以ES模块|
 |pluginx||包括所以已安装插件|
 
-#### Plugin组件
+#### Analyzer
 
 -  analysis-ice 国际化分词插件
     
@@ -115,6 +115,10 @@ tags:
     
     > 是一款基于词典和规则的中文分词器
 
+- 分词器是专门处理分词的组件，Analyzer由三部分组成
+    - Character Filters(针对原始文本处理，例如去除html)
+    - Tokenizer(按照规则切分为单词)
+    - Token Filter(将切分的单词进行加工，小写，删除stopwords，增加同义词)
 
 **注：原创文章，转载请注明出处**
 
