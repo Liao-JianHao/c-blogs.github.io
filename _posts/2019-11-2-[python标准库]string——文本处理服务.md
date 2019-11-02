@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [python标准库]string——文本处理服务
+title:      (python标准库)string——文本处理服务
 date:       2019-11-2
 author:     Mr.C
 header-img: img/string.jpg
