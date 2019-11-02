@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      string模块
-subtitle:   [python标准库]string
+subtitle:   \[python标准库]string
 date:       2019-11-2
 author:     Mr.C
 header-img: img/string.jpg
